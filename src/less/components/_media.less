@@ -1,0 +1,153 @@
+// Media Block
+//
+// Standard media block with media object to the left and text ontent to the right.
+//
+// Markup:
+// <div class="media {$modifiers}">
+//   <div class="media-object"><img src="http://placekitten.com/200/150"></div>
+//   <div class="media-body">
+//     <h4 class="media-heading">Media Block Heading</h4>
+//     <p class="description">Media block description main body of content</p>
+//     <div class="de-emphasised">1st January 1970</div>
+//   </div>
+// </div>
+//
+// .media-vertical-align    - Vertically align content
+// .media-inversed          - Inversed (cannot be used with .media-vertical-align)
+//
+// Styleguide 14.0
+
+
+// Base Styles
+// ---------------------------
+  .media {
+      // Allow the media object to be used on an anchor
+      color: @base-text-color;
+      display: block;
+      text-decoration: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .media,
+  .media-body {
+      overflow: hidden;
+  }
+
+  .media-object {
+    float: left;
+    margin-right: @base-spacing;
+    img {
+      width:auto;
+    }
+  }
+
+  // Reset margins on headings for tighter default spacing
+  .media-heading {
+    display: block;
+    margin: 0;
+  }
+  .media-body {
+
+    .description {
+      //margin: 0 0 10px;
+      margin: 0;
+    }
+    // To show things like dates etc
+    .de-emphasised {
+      color: @deemphasised-text-color;
+    }
+  }
+
+
+// Media block as link
+// -------------------------
+  a.media .media-heading {
+    color: @link-color;
+    font-weight: bold;
+  }
+    a.media:hover .media-heading { color: @hover-color; }
+
+// With sidebar
+//
+// Has a sidebar
+//
+// Markup:
+// <div class="media has-sidebar">
+//   <div class="media-object"><img src="http://placekitten.com/200/150"></div>
+//   <div class="media-body">
+//     <h4 class="media-heading">Media Block Heading</h4>
+//     <p class="description">Media block description main body of content</p>
+//     <div class="de-emphasised">1st January 1970</div>
+//   </div>
+//   <div class="media-aside">
+//     <p class="description">Aside Content</p><span class="btn">Button</span>
+//   </div>
+// </div>
+//
+// Styleguide 14.1
+
+// Vertically Aligned
+// & With Sidebar Variations
+// -------------------------
+
+  .media {
+    &.media-vertical-align,
+    &.media-sidebar {
+      display: table !important;
+      width: 100%;
+
+      .media-body,
+      .media-object {
+        display: table-cell;
+        float: none;
+        margin: 0;
+        img {
+          max-width: none;
+        }
+      }
+
+      .media-object {
+        padding-right: 10px;
+        width:10px; // Make the cell isnt bigger than any of the images
+      }
+    }
+
+    // Specifically to vertically align contents
+    &.media-vertical-align {
+      .media-body,
+      .media-object {
+        vertical-align: middle;
+      }
+    }
+
+    // For has sidebar, vertical alignment needs to be top
+    &.media-sidebar {
+      .media-body,
+      .media-object,
+      .media-aside {
+        vertical-align: top;
+      }
+
+      .media-aside {
+        text-align: right;
+      }
+    }
+  }
+
+
+// Inversed Variation
+// -----------------------------------------
+  .media.media-inversed {
+    .media-object {
+      float: right;
+      margin-left: @base-spacing;
+      margin-right: 0;
+    }
+  }
+
+// After a set of media blocks
+// show a more link or similar
+// -------------------------
+  .media-footer {
+    text-align: right;
+  }

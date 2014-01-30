@@ -1,0 +1,341 @@
+﻿// Forms
+//
+// Description
+//
+// Styleguide 2.0
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input {
+    border: 1px solid @gray-light;
+    color: @input-color;
+    font-family: @base-font-family;
+    margin: 0;
+    padding: 5px 5px;
+    width: 100%;
+  }
+
+  select:focus,
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus {
+    border-color: @gray-light;
+    outline: 0;
+  }
+
+  // Input placeholder text
+  ::-webkit-input-placeholder { color: @gray-dark; }
+  ::-moz-placeholder          { color: @gray-dark; }
+  :-ms-input-placeholder      { color: @gray-dark; }
+
+  textarea {
+    height: auto;
+    resize: vertical; // Override the chrome feature to resize text boxes
+    min-height: 40px; // Bug in FF allowed user to resize the textarea to nothing, and not expand it until page refresh
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 3px;
+    float: left;
+    margin-right: 6px;
+  }
+
+  // Use .checkbox/radio-inline for a series of radio/checkboxes next to each other
+  // TODO: This could be the default behavior for the radio/checkboxes instead of an explicit class
+  .radio-inline,
+  .checkbox-inline {
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle; // Need this to stop weird white space below 2 adjacent elements
+
+    /*&+& {
+      margin-left: 10px;
+    }*/
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-top: 7px;
+    }
+
+  }
+
+
+  fieldset {
+    background-color: @gray-lighter;
+    padding: 10px;
+  }
+
+  select {
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    padding: 0;
+    min-height: 23px;
+  }
+
+  // Inline Forms
+  //
+  // Description
+  //
+  // Markup:
+  // <form class="form-inline">
+  //   <label>Username</label>
+  //   <div class="control">
+  //     <input type="text">
+  //   </div>
+  //   <label>Password</label>
+  //   <div class="control">
+  //     <input type="password">
+  //   </div>
+  //   <label class="checkbox-inline">
+  //     <input type="checkbox">Remember me
+  //   </label>
+  //   <div class="control">
+  //     <button>Sign In</button>
+  //   </div>
+  // </form>
+  //
+  // Styleguide 2.1.
+    .form-inline {
+      margin-bottom: @base-spacing;
+
+      label {
+        line-height: @label-line-height;
+        margin-right: @base-spacing;
+      }
+
+      .control {
+        margin-right: @base-spacing;
+
+        &:last-child {
+          margin-right: 0; // When a form is right aligned, it cant have a right margin
+        }
+      }
+
+      label,
+      .control {
+        display: inline-block;
+      }
+    }
+
+  // Horizontal Forms
+  //
+  // Description
+  //
+  // Markup:
+  // <form class="form-horizontal">
+  //   <div class="row">
+  //     <label class="col-3">Name</label>
+  //     <div class="control col-9">
+  //       <input type="text">
+  //     </div>
+  //   </div>
+  //   <div class="row">
+  //     <label class="col-3">Email</label>
+  //     <div class="control col-9">
+  //       <input type="email">
+  //     </div>
+  //   </div>
+  //   <div class="row">
+  //     <label class="col-3">Postcode</label>
+  //     <div class="control col-3">
+  //       <input type="number">
+  //     </div>
+  //     <label class="col-3">Phone</label>
+  //     <div class="control col-3">
+  //       <input type="tel">
+  //     </div>
+  //   </div>
+  //   <div class="row">
+  //     <label class="col-3">Terms and conditions</label>
+  //     <div class="control col-9">
+  //       <label class="checkbox-inline">
+  //         <input type="checkbox">I agree to terms and conditions
+  //       </label>
+  //     </div>
+  //   </div>
+  //   <div class="row">
+  //     <label class="col-3">Ask a question?</label>
+  //     <div class="control col-9">
+  //       <label class="radio-inline">
+  //         <input type="radio">Yes
+  //       </label>
+  //       <label class="radio-inline">
+  //         <input type="radio">No
+  //       </label>
+  //     </div>
+  //   </div>
+  //   <div class="row">
+  //     <div class="control col-9 col-offset-3">
+  //       <button>Sign In</button>
+  //     </div>
+  //   </div>
+  // </form>
+  //
+  // Styleguide 2.2.
+    .form-horizontal {
+        .control {
+          margin-bottom: @base-spacing;
+        }
+        label {
+          line-height: @label-line-height;
+          padding-right: @base-spacing;
+        }
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="url"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="color"],
+        .uneditable-input {
+          width:100%;
+        }
+    }
+
+  // Vertical Forms
+  //
+  // Description
+  //
+  // Markup:
+  // <form class="form-vertical">
+  //   <label>Username</label>
+  //   <div class="control">
+  //     <input type="text">
+  //   </div>
+  //   <label>Password</label>
+  //   <div class="control">
+  //     <input type="password">
+  //   </div>
+  //   <div class="control">
+  //     <button>Sign In</button>
+  //   </div>
+  // </form>
+  //
+  // Styleguide 2.3.
+    .form-vertical {
+      .control {
+        margin-bottom: 8px;
+      }
+      label {
+        line-height: @label-line-height;
+      }
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="url"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="color"],
+        .uneditable-input {
+          width:100%;
+        }
+    }
+
+  // Controls
+  //
+  // Description
+  //
+  // Markup:
+  // <form class="form-vertical">
+  //   <div class="control {$modifiers}">
+  //     <input type="text">
+  //   </div>
+  // </form>
+  //
+  // .control-thin           - Small
+  // .control-medium         - Medium
+  // .control-wide           - Large
+  //
+  // Styleguide 2.4
+    .control-thin {
+      width:140px
+    }
+    .control-medium {
+      width:280px
+    }
+    .control-wide {
+      width:400px
+    }
+
+// Control Variants
+//
+// Input fields
+//
+// Markup:
+// <div class="control control-pin control-medium">
+//   <input type="text"  class="input-medium" placeholder="3">
+//   <input type="text"  class="input-medium" placeholder="0">
+//   <input type="text"  class="input-medium" placeholder="0">
+//   <input type="text"  class="input-medium" placeholder="0">
+// </div>
+//
+// Styleguide 2.4.1
+  // .input-pin {
+  //   margin-left: -1px;
+  //   width: 30px;
+  //   height: 30px;
+  //   line-height: 30px;
+  //   text-align: center;
+  // }
+
+  .control-pin {
+      input {
+        display: inline-block;
+        line-height: 25px;
+        height: 45px;
+        margin-left: -4px;
+        text-align: center;
+        position: relative;
+        width: 45px;
+        z-index: @zindex-base;
+
+      &:focus {
+        z-index: @zindex-base + 1;
+      }
+    }
+  }

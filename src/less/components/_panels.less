@@ -1,0 +1,56 @@
+// Panels
+//
+// Any discreet panel of content
+//
+// Markup:
+// <div class="panel {$modifiers}">
+//   <h1>A panel title</h1>
+//   <p>Sweet oat cake lemon drops. Pastry tart pudding applicake halvah apple pie donut icing. Croissant dessert toffee souffle croissant cake. Gummies bear claw fruitcake. Carrot cake bear claw marzipan gummi bears. Gummi bears fruitcake bear claw candy dragee cupcake wafer. Jelly beans macaroon cupcake halvah unerdwear.com jelly-o applicake. Liquorice lollipop marzipan bear claw.</p>
+// </div>
+//
+// .panel-highlighted           - Highlighted
+// .panel-brand                 - Branded
+// .panel-message-success       - Success Message
+// .panel-message-error         - Error Message
+//
+// Styleguide 13.0
+  .panel {
+    .layout-main & { // Panels inside the main content section
+      margin: @large-panel-spacing 0 0 0;
+    }
+    .layout-sidebar & { // Panels inside a sidebar
+      margin: @base-panel-spacing 0 0 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &[class*="panel-message-"] {
+      background: lighten(@info-accent-color, 40%);
+      border-radius: 1px;
+      border: 1px solid @info-accent-color;
+      color: @info-accent-color;
+      padding: 5px 10px;
+    }
+    &.panel-message-success {
+      background: lighten(@success-accent-color, 40%);
+      border: 1px solid @success-accent-color;
+      color: @success-accent-color;
+    }
+    &.panel-message-error {
+      background: lighten(@danger-accent-color, 40%);
+      border: 1px solid @danger-accent-color;
+      color: @danger-accent-color;
+    }
+  }
+
+    .panel-highlighted {
+      background: @background-accent-color;
+      padding: @large-spacing;
+    }
+
+    .panel-brand {
+      border:solid 4px @primary-accent-color;
+      padding: @base-spacing;
+    }

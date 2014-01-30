@@ -1,0 +1,138 @@
+// Accordion
+//
+// The accordion component used for showing and collapsing content upon user action.
+//
+// Markup:
+// <ul class="module-accordion accordion-with-icon" id="full-specifications">
+//   <li class="accordion-group">
+//     <div class="accordion-header">
+//       <a href="#feat_spec_safety__security_0" data-parent="#full-specifications" data-toggle="collapse" class="accordion-toggle">Heading</a>
+//     </div>
+//     <div class="accordion-body" id="feat_spec_safety__security_0">
+//       <div class="accordion-inner">
+//         Content
+//       </div>
+//     </div>
+//   </li>
+//   <li class="accordion-group">
+//     <div class="accordion-header">
+//       <a href="#feat_spec_safety__security_1" data-parent="#full-specifications" data-toggle="collapse" class="accordion-toggle">Heading</a>
+//     </div>
+//     <div class="accordion-body" id="feat_spec_safety__security_1">
+//       <div class="accordion-inner">
+//         Content
+//       </div>
+//     </div>
+//   </li>
+//   <li class="accordion-group">
+//     <div class="accordion-header">
+//       <a href="#feat_spec_safety__security_2" data-parent="#full-specifications" data-toggle="collapse" class="accordion-toggle">Heading</a>
+//     </div>
+//     <div class="accordion-body" id="feat_spec_safety__security_2">
+//       <div class="accordion-inner">
+//         Content
+//       </div>
+//     </div>
+//   </li>
+//   <li class="accordion-group">
+//     <div class="accordion-header">
+//       <a href="#feat_spec_safety__security_3" data-parent="#full-specifications" data-toggle="collapse" class="accordion-toggle">Heading</a>
+//     </div>
+//     <div class="accordion-body" id="feat_spec_safety__security_3">
+//       <div class="accordion-inner">
+//         Content
+//       </div>
+//     </div>
+//   </li>
+// </ul>
+//
+// Styleguide 15.0
+
+  // Parent Container
+  .module-accordion {
+    margin: 0;
+    padding: 0;
+
+    // Group == heading + body
+    .accordion-group {
+      list-style: none;
+      border-bottom: 1px solid #e5e5e5;
+      margin-bottom:0;
+    }
+
+      .accordion-header {
+        font-size:14px;
+      }
+
+        .accordion-toggle {
+          cursor: pointer;
+          color: @link-color;
+          display: block;
+          padding: 10px;
+          position: relative;
+
+          .accordion-icon {
+            color: @base-text-color;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            margin-top: -4px;
+            transition: transform .2s;
+          }
+
+          &.is-active {
+            .accordion-icon {
+              .rotate(180deg);
+            }
+          }
+        }
+
+
+    .accordion-body {
+      overflow: hidden;
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      transition: all .5s;
+
+      &.in {
+        height: none;
+      }
+    }
+      // Inner needs the styles because you can't animate
+      // properly with any styles on the element
+      .accordion-inner {
+        padding: 9px 15px;
+        transition: all .5s;
+      }
+  }
+
+// Visual Variations
+// --------------------------------------------------
+  /*.accordion-with-icon {
+    .accordion-toggle {
+      position: relative;
+
+      &:after {
+        @iconSize: 15px;
+        background: @gray-light;
+        border-radius: 50%;
+        color: #fff;
+        content: "+";
+        display:block;
+        line-height: 16px;
+        margin-top: -(@iconSize / 2);
+        position: absolute;
+        right: (@iconSize / 2);
+        .size(@iconSize, @iconSize);
+        text-align: center;
+        text-decoration: none;
+        top: 50%;
+      }
+
+      &.is-active:after {
+        content: "-";
+        line-height: 12px;
+      }
+    }
+  }*/

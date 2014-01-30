@@ -1,0 +1,209 @@
+// Icon Fonts
+//
+// Collection of custom icon fonts to be used wherever an icon is required in the interface.
+//
+// Markup:
+// <i class="{$modifiers}"></i>
+//
+// .icon-finance         - finance
+// .icon-tick            - tick
+// .icon-inbox           - inbox
+// .icon-dollar          - dollar
+// .icon-car             - car
+// .icon-home            - home
+// .icon-arrow-down      - arrow-down
+// .icon-arrow-up        - arrow-up
+// .icon-arrow-right     - arrow-right
+// .icon-arrow-left      - arrow-left
+// .icon-signout         - signout
+// .icon-account         - account
+// .icon-manage-ad       - manage-ad
+// .icon-search          - search
+// .icon-create-ad       - create-ad
+// .icon-remove          - remove
+// .icon-recent          - recent
+// .icon-save-search     - save-search
+// .icon-save            - save
+// .icon-sync            - sync
+// .icon-settings        - settings
+// .icon-info            - info
+// .icon-share           - share
+// .icon-transmission    - transmission
+// .icon-engine          - engine
+// .icon-bodytype        - bodytype
+// .icon-odometer        - odometer
+// .icon-add             - add
+// .icon-video           - video
+// .icon-camera          - camera
+// .icon-mail            - mail
+// .icon-facebook        - facebook
+// .icon-twitter         - twitter
+// .icon-special-offer   - special-offer
+// .icon-zoom-in         - zoom-in
+// .icon-zoom-out        - zoom-out
+// .icon-horizontal-move - horizontal-move
+// .icon-drag            - drag
+// .icon-colour          - colour
+//
+// Styleguide 10.0
+
+
+.font-face(csn-icons, ~'@{fonts-path}icons/csn-icons');
+
+// Generic Styling for all icons
+// -----------------------------------------
+  [class*="icon-"] {
+    font-family: 'csn-icons';
+    display: inline-block;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-transform: none;
+    speak: none;
+    position: relative;
+    top: 1px;
+    -webkit-font-smoothing: antialiased;
+    //text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  }
+
+// Individual icon codes
+// -----------------------------------------
+  .icon-finance:before {
+    content: "\e024";
+  }
+  .icon-tick:before {
+    content: "\2713";
+  }
+  .icon-inbox:before {
+    content: "\21e9";
+  }
+  .icon-dollar:before {
+    content: "\2776";
+  }
+  .icon-car:before {
+    content: "\25ac";
+  }
+  .icon-home:before {
+    content: "\2617";
+  }
+  .icon-arrow-down:before {
+    content: "\2193";
+  }
+  .icon-arrow-up:before {
+    content: "\2191";
+  }
+  .icon-arrow-right:before {
+    content: "\2192";
+  }
+  .icon-arrow-left:before {
+    content: "\2190";
+  }
+  .icon-signout:before {
+    content: "\21b8";
+  }
+  .icon-account:before {
+    content: "\263b";
+  }
+  .icon-manage-ad:before {
+    content: "\270e";
+  }
+  .icon-search:before {
+    content: "\25ce";
+  }
+  .icon-create-ad:before {
+    content: "\271a";
+  }
+  .icon-remove:before {
+    content: "\2715";
+  }
+  .icon-recent:before {
+    content: "\231a";
+  }
+  .icon-save-search:before {
+    content: "\275a";
+  }
+  .icon-save:before {
+    content: "\2605";
+  }
+  .icon-sync:before {
+    content: "\21ba";
+  }
+  .icon-settings:before {
+    content: "\2731";
+  }
+  .icon-info:before {
+    content: "\2762";
+  }
+  .icon-share:before {
+    content: "\e600";
+  }
+  .icon-transmission:before {
+    content: "\e601";
+  }
+  .icon-engine:before {
+    content: "\e602";
+  }
+  .icon-bodytype:before {
+    content: "\e603";
+  }
+  .icon-odometer:before {
+    content: "\e604";
+  }
+  .icon-add:before {
+    content: "\e605";
+  }
+  .icon-video:before {
+    content: "\e606";
+  }
+  .icon-camera:before {
+    content: "\e607";
+  }
+  .icon-mail:before {
+    content: "\e608";
+  }
+  .icon-facebook:before {
+    content: "\e609";
+  }
+  .icon-twitter:before {
+    content: "\e60b";
+  }
+  .icon-special-offer:before {
+    content: "\e60a";
+  }
+  .icon-zoom-in:before {
+    content: "\2b";
+  }
+  .icon-zoom-out:before {
+    content: "\2d";
+  }
+  .icon-horizontal-move:before {
+    content: "\e60c";
+  }
+  .icon-drag:before {
+    content: "\e60d";
+  }
+  .icon-colour:before {
+    content: "\e60e";
+  }
+
+
+// Icon Sizes
+//
+// 6 different sizes for our icons
+//
+// Markup:
+// <i class="icon-twitter {$modifiers}"></i>
+//
+// .icon-mini           - Mini Size
+// .icon-small          - Small Icon
+// .icon-large          - Large Icon
+// .icon-huge           - Huge Icon
+//
+// Styleguide 10.1
+  .icon-mini   { font-size: 12px;}
+  .icon-small  { font-size: 16px;}
+  // Medium is default (24px)
+  .icon-large  { font-size: 48px;}
+  .icon-huge   { font-size: 64px;}

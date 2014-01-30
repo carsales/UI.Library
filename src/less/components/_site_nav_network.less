@@ -1,0 +1,156 @@
+@import "../base/_variables.less";
+@import "../base/_mixins.less";
+
+// The values for these variables will change when the structure of the project has settled down.
+//@import "_sprites_dev.less";
+@import "_sprites_prod.less";
+
+.site-nav {
+
+    .nav-network {
+
+        .arrow {
+            right: 32px;
+        }
+
+        .menu-panel {
+            width: 990px;
+            padding: 5px 11px;
+            right: -1px;
+        }
+
+        .menu-content {
+            h3 {
+                font-size: 16px;
+                line-height: 20px;
+                color: #000;
+            }
+
+            .content {
+				border-left: 1px solid #ebebeb;
+				padding: 11px 0 5px 10px;
+				display: block;
+				height: 49px;
+				line-height: 12px;
+				overflow: hidden;
+				float: left;
+				width: 164px;
+				font-size: 11px;
+			}
+
+			a:hover {
+				color: #000;
+			}
+
+			a {
+				display: block;
+				padding: 5px;
+				font-size: 11px;
+				color: @gray-dark;
+				text-decoration: none;
+				overflow: hidden;
+			}
+
+			.view-all {
+				float: right;
+				font-size: 11px;
+				margin-right: 8px;
+				padding:5px 0 0;
+				font-weight: bold;
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+        }
+
+        .logo-banner {
+            width: 222px;
+            padding-bottom: 5px;
+            float: left;
+
+            > a {
+                display: block;
+                width: 100%;
+                height: 62px;
+                background: url(@multiLogoSpriteUrl) no-repeat -11px -6px;
+            }
+        }
+
+        .keylines {
+            float: left;
+            width: 600px;
+            border-left: 1px dotted #cdcdcd;
+            padding:5px 0 4px 15px;
+            margin: 16px 0 10px 15px;
+        }
+
+        .menu-by-line {
+			font-family: Georgia, serif;
+			font-size: 14px;
+			font-style: italic;
+			margin-bottom: 0;
+			line-height: 16px;
+		}
+
+		ul {
+			margin: 0 0 5px;
+			padding: 0;
+			list-style-type: none;
+			width: 939px;
+			overflow: hidden;
+			zoom: 1;
+			clear: both;
+			background: none;
+		}
+
+		li {
+			float: left;
+			width: 304px;
+			margin: 0 10px 10px 0;
+			border: 1px solid #ebebeb;
+			border-radius: 5px;
+			line-height: 12px;
+			padding: 0;
+
+			&.last {
+				margin-right: 0;
+			}
+		}
+
+		.logo {
+			float: left;
+			background: url(@multiLogoSpriteUrl) no-repeat;
+			width: 124px;
+			height: 55px;
+			text-indent: -9999px;
+			position: static;
+			margin: 0;
+		}
+
+		.bikesales .logo { background-position: -8px -58px; }
+		.boatsales .logo { background-position: -144px -56px;  }
+		.caravancampingsales .logo { background-position: -280px -63px; }
+		.homesales .logo { background-position: -8px -118px; }
+		.quicksales .logo { background-position: -144px -122px; }
+		.motoring .logo { background-position: -280px -124px; }
+		.trucksales .logo { background-position: -8px -178px; }
+		.farmmachinerysales .logo { background-position: -144px -178px; }
+		.constructionsales .logo { background-position: -280px -176px; }
+    }
+}
+
+@media screen and (max-width:1229px) {
+	.site-nav {
+        .nav-network {
+	        .arrow {
+	            right: 136px;
+	        }
+
+	        .menu-panel {
+	        	right: -105px;
+	    	}
+	    }
+    }
+}

@@ -1,0 +1,58 @@
+// Carets
+//
+// When you need to indicate movement or give additional emphasis to a piece of text
+//
+// Markup:
+// <i class="caret {$modifiers}"></i>
+//
+// .north           - North
+// .south           - South
+// .east            - East
+// .west            - West
+//
+// Styleguide 5.0
+
+.caret {
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: middle;
+  width: 0;
+
+  &,
+  &.south,
+  .is-active &.north,
+  .is-active &.west,
+  .is-active &.east {
+    #caret > .south(4px, #444);
+  }
+
+  .is-active &,
+  &.north,
+  .is-active &.south {
+    #caret > .north(4px, #444);
+  }
+
+  &.east {
+    #caret > .east(4px, #444);
+  }
+
+  &.west {
+    #caret > .west(4px, #444);
+  }
+}
+// Active States
+//
+// When a caret is activated, such as when the user clicks on a drop down menu.
+//
+// Markup:
+// <div class="is-active">
+//   <i class="caret {$modifiers}"></i>
+// </div>
+//
+// .north           - Active North
+// .south           - Active South
+// .east            - Active East
+// .west            - Active West
+//
+// Styleguide 5.1

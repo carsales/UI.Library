@@ -1,0 +1,87 @@
+// Badges and Flags
+//
+// To apply the emphasis to a piece of text in different ways
+//
+// Markup:
+// <span class="badge {$modifiers}">Badge</span>
+// <span class="badge badge-flag {$modifiers}">Flag</span>
+// <span class="badge badge-flag badge-flag-reversed {$modifiers}">Flag Reversed</span>
+//
+// .badge-danger           - Danger
+// .badge-success          - Success
+//
+// Styleguide 17.0
+
+  @badge-height: 24px;
+  @arrow-width: @badge-height / 2;
+
+  .badge {
+    background: @primary-accent-color;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    line-height: @badge-height;
+    height: @badge-height;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1px 6px;
+    position: relative;
+
+    // Danger variant
+    &.badge-danger {
+      background: @danger-accent-color;
+      &:after {
+        border-left-color: @danger-accent-color;
+        border-right-color: @danger-accent-color;
+      }
+    }
+
+    // Success variant
+    &.badge-success {
+      background: @success-accent-color;
+      &:after {
+        border-left-color: @success-accent-color;
+        border-right-color: @success-accent-color;
+      }
+    }
+  }
+
+    // Flag variant
+    .badge-flag {
+      border-radius: 2px 0 0 2px;
+      margin-right: @arrow-width + 3; // Give a little breathing room
+      padding: 1px 4px 1px 6px;
+
+      &:after {
+        border-top: @arrow-width solid transparent;
+        border-bottom: @arrow-width solid transparent;
+        border-left: solid (@arrow-width*.75) @primary-accent-color;
+        border-right: 0;
+        content:" ";
+        margin-right: -(@arrow-width*.75);
+        position: absolute;
+        right:0;
+        top:50%;
+        margin-top: -(@arrow-width);
+      }
+    }
+
+    // Reversed flag variant
+    .badge-flag-reversed {
+      border-radius: 0 2px 2px 0;
+      margin-left: @arrow-width + 3;
+      margin-right: 0;
+      padding: 1px 6px 1px 4px;
+
+      &:after {
+        border-right: solid (@arrow-width*.75) @primary-accent-color;
+        border-left: 0;
+        right: auto;
+        left: 0;
+        margin-left: -(@arrow-width*.75);
+        margin-right: 0;
+      }
+    }
+

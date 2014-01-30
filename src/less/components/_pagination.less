@@ -1,0 +1,60 @@
+// Pagination
+//
+// Used for longer listings of content, where a continuous scroll or similar is not appropriate.
+//
+// Markup:
+// <div class="pagination">
+//   <div class="page-count">Page 2 of 4</div>
+//   <div class="pages">
+//     <a href="#" class="prev page"><span class="caret west"></span>Prev</a>
+//     <a href="#" class="page">1</a>
+//     <span class="current page">2</span>
+//     <a href="#" class="page">3</a>
+//     <a href="#" class="page">4</a>
+//     <a href="#" class="next page">Next<span class="caret east"></span></a>
+//   </div>
+// </div>
+//
+// Styleguide 8.0
+  .pagination {
+    .clearfix();
+    border-top: solid 1px @gray-light;
+    padding: @large-spacing 0;
+    margin-top: @large-spacing;
+
+    .pages {
+      text-align: right;
+    }
+
+    .page,
+    .page-count {
+      background: @gray-lighter;
+      border-radius: @btn-border-radius;
+      color: @gray-dark;
+      display: inline-block;
+      margin-left: @base-spacing;
+      padding: 0 10px;
+      line-height: 30px;
+      height: 30px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .current {
+      background: none;
+    }
+
+    .page-count {
+      float: left;
+      margin-left: 0;
+    }
+
+    a:hover {
+      background: darken(@gray-lighter, 3%);
+      color: @gray-darker;
+      text-decoration: none;
+    }
+
+    .prev .caret { margin-right: 4px; }
+    .next .caret { margin-left: 4px;  }
+  }
