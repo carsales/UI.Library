@@ -3,12 +3,12 @@
 // The accordion component used for showing and collapsing content upon user action.
 //
 // Markup:
-// <ul class="module-accordion accordion-with-icon" id="full-specifications">
+// <ul class="module-accordion accordion-with-icon" id="accordion">
 //   <li class="accordion-group">
 //     <div class="accordion-header">
-//       <a href="#feat_spec_safety__security_0" data-parent="#full-specifications" data-toggle="collapse" class="accordion-toggle">Heading</a>
+//       <a href="#acc1" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle">Heading</a>
 //     </div>
-//     <div class="accordion-body" id="feat_spec_safety__security_0">
+//     <div class="accordion-body" id="acc1">
 //       <div class="accordion-inner">
 //         Content
 //       </div>
@@ -16,9 +16,9 @@
 //   </li>
 //   <li class="accordion-group">
 //     <div class="accordion-header">
-//       <a href="#feat_spec_safety__security_1" data-parent="#full-specifications" data-toggle="collapse" class="accordion-toggle">Heading</a>
+//       <a href="#acc2" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle">Heading</a>
 //     </div>
-//     <div class="accordion-body" id="feat_spec_safety__security_1">
+//     <div class="accordion-body" id="acc2">
 //       <div class="accordion-inner">
 //         Content
 //       </div>
@@ -26,19 +26,9 @@
 //   </li>
 //   <li class="accordion-group">
 //     <div class="accordion-header">
-//       <a href="#feat_spec_safety__security_2" data-parent="#full-specifications" data-toggle="collapse" class="accordion-toggle">Heading</a>
+//       <a href="#acc3" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle">Heading</a>
 //     </div>
-//     <div class="accordion-body" id="feat_spec_safety__security_2">
-//       <div class="accordion-inner">
-//         Content
-//       </div>
-//     </div>
-//   </li>
-//   <li class="accordion-group">
-//     <div class="accordion-header">
-//       <a href="#feat_spec_safety__security_3" data-parent="#full-specifications" data-toggle="collapse" class="accordion-toggle">Heading</a>
-//     </div>
-//     <div class="accordion-body" id="feat_spec_safety__security_3">
+//     <div class="accordion-body" id="acc3">
 //       <div class="accordion-inner">
 //         Content
 //       </div>
@@ -55,8 +45,8 @@
 
     // Group == heading + body
     .accordion-group {
-      list-style: none;
       border-bottom: 1px solid #e5e5e5;
+      list-style: none;
       margin-bottom:0;
     }
 
@@ -77,6 +67,8 @@
             top: 50%;
             right: 10px;
             margin-top: -4px;
+            -webkit-transition: -webkit-transform .2s;
+            -moz-transition: -moz-transform .2s;
             transition: transform .2s;
           }
 
