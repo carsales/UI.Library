@@ -1,0 +1,178 @@
+// Buttons
+//
+// A majority of buttons in the site are built from the same base class.
+//
+// Markup:
+// <a href="#" class="btn {$modifiers}">Link Button</a>
+// <button class="btn {$modifiers}">Button Element</button>
+// <input type="button" class="btn {$modifiers}" value="input[type='button']"/>
+//
+// :hover                       - Default hover
+// :active                      - Defaults active
+// :focus                       - Default focus
+// .is-disabled                 - Default disabled
+// .btn-conversion              - Conversion
+// .btn-conversion:hover        - Conversion hover
+// .btn-conversion:active       - Conversion active
+// .btn-conversion:focus        - Conversion focus
+// .btn-conversion.is-disabled  - Conversion disabled
+// .btn-primary                 - Primary
+// .btn-primary:hover           - Primary hover
+// .btn-primary:active          - Primary active
+// .btn-primary:focus           - Primary focus
+// .btn-primary.is-disabled     - Primary disabled
+// .btn-secondary               - Secondary
+// .btn-secondary:hover         - Secondary hover
+// .btn-secondary:active        - Secondary active
+// .btn-secondary:focus         - Secondary focus
+// .btn-secondary.is-disabled   - Secondary disabled
+//
+// Styleguide 1.0
+  .btn {
+    .button-style(@gray-lighter, @gray-darker);
+    border-radius: @btn-border-radius;
+    border: solid 1px #ddd;
+    display: inline-block;
+    font-family: @base-font-family; // FF makes up its own font family for the <button> element
+    line-height: @base-line-height;
+    padding: 5px 12px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .btn[disabled="disabled"],
+  .btn.is-disabled {
+    .opacity(50);
+    box-shadow: none !important;
+    cursor: default;
+  }
+
+  .btn-conversion {
+    .button-style(@primary-conversion-color);
+    border: 0;
+  }
+
+  .btn-primary {
+    .button-style(@primary-accent-color);
+    border: 0;
+  }
+
+  .btn-secondary {
+    .button-style(@secondary-accent-color);
+    border: 0;
+  }
+
+
+  // Show a carat/arrow inside the button
+  // .csstransforms .has-carat {
+  //   text-align: left;
+  //   padding-right: 25px;
+  //   position: relative;
+
+  //   &:before,
+  //   &:after {
+  //     background: #fff;
+  //     content: " ";
+  //     height: 8px;
+  //     margin-top: -2px;
+  //     position: absolute;
+  //     right: 9px;
+  //     .rotate(-135deg);
+  //     top: 50%;
+  //     width: 3px;
+  //   }
+  //   &:after {
+  //     .rotate(-45deg);
+  //     margin-top: -6px;
+  //   }
+  //   &.btn-small {
+  //     &:before,
+  //     &:after {
+  //       height: 6px;
+  //       width: 2px;
+  //       margin-top: -1px;
+  //     }
+  //     &:after {
+  //       margin-top: -4px;
+  //     }
+  //   }
+  // }
+
+
+// Sizes
+//
+// Sizing variations for buttons
+//
+// Markup:
+// <a href="#" class="btn {$modifiers}">Link Button</a>
+// <button class="btn {$modifiers}">Button Element</button>
+// <input type="button" class="btn {$modifiers}" value="input[type='button']"/>
+//
+// .btn-small           - Small
+// .btn-large           - Large
+// .btn-block           - Make it block/full width
+//
+// Styleguide 1.1
+  .btn-small {
+    font-size: 11px;
+    padding: 4px 8px;
+    min-width: 25px;
+  }
+
+  .btn-large {
+    font-size: @large-font-size;
+    padding: 11px 10px;
+    line-height: @large-font-size * 1.145;
+  }
+
+   // Make it a block/full width
+  .btn-block {
+    display: block;
+    margin-bottom: @base-line-height/2;
+    text-align: center;
+    width: 100%;
+  }
+    button.btn-block {
+      width:100%;
+    }
+
+// Button Groups
+//
+// Making a group of buttons joined together
+//
+// Markup:
+// <div class="btn-group">
+//   <a href="#" class="btn">Link Button</a>
+//   <a href="#" class="btn">Link Button</a>
+//   <a href="#" class="btn">Link Button</a>
+// </div>
+//
+// Styleguide 1.2
+  .btn-group {
+    display: inline-block;
+    font-size: 0; // remove as part 1 of font-size inline-block hack
+    position: relative;
+    white-space: nowrap; // prevent buttons from wrapping when in tight spaces (e.g., the table on the tests page)
+
+    .btn {
+      border-radius: 0;
+      font-size: 12px;
+      margin-left: -1px;
+      position: relative;
+
+      &:hover {
+        z-index: 2;
+      }
+    }
+    .btn:first-child {
+      margin-left: 0;
+      border-radius: @btn-border-radius 0 0 @btn-border-radius;
+    }
+    .btn:last-child {
+      border-radius: 0 @btn-border-radius @btn-border-radius 0;
+    }
+  }

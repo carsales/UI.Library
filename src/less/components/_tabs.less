@@ -1,0 +1,85 @@
+// Tabs
+//
+// Navigating through a group of content blocks.
+//
+// Markup:
+// <ul class="tabs-nav">
+//   <li class="is-active">
+//     <a href="#tab-features" data-toggle="tab">Tab 1</a>
+//   </li>
+//   <li>
+//     <a href="#tab-features" data-toggle="tab">Tab 2</a>
+//   </li>
+//   <li>
+//     <a href="#tab-features" data-toggle="tab">Tab 3</a>
+//   </li>
+// </ul>
+// <div class="tab-content">
+//   <section class="tab-pane is-active" id="tab-one">Content for tab 1</section>
+//   <section class="tab-pane" id="tab-two">Content for tab 2</section>
+// </div>
+//
+// Styleguide 6.0
+
+.tabs {
+}
+  .tabs-nav {
+    .clearfix();
+    border-bottom: 1px solid @gray-light;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      float:left;
+      line-height: 20px;
+      margin-bottom: -1px;
+      position: relative; // To position carat
+    }
+
+    a {
+      border: 1px solid transparent;
+      display: block;
+      line-height: 20px;
+      margin-bottom: -1px;
+      margin-right: 5px;
+      padding: (@base-spacing * .8) (@base-spacing * 1.2);
+      text-decoration: none;
+    }
+    .is-active {
+      z-index: 2;
+      > a {
+        background-color: #fff;
+        border: 1px solid @gray-light;
+        border-bottom-color: transparent;
+        color: @base-text-color;
+        cursor: default;
+        outline: none;
+      }
+    }
+  }
+
+  .tabs-brand {
+    a {
+      padding:12px 20px;
+    }
+
+    .is-active > a {
+      font-weight:bold;
+      border-top:solid 3px @primary-accent-color;
+    }
+  }
+
+
+// FUNCTIONALITY
+// -----------------------------------------
+  // Make it work
+  .tab-content {
+    > .tab-pane {
+      display: none;
+    }
+
+    > .is-active {
+      display: block;
+    }
+  }

@@ -1,0 +1,108 @@
+// Tables
+//
+// Tabular content
+//
+// Markup:
+// <table class="{$modifiers}">
+//   <tbody>
+//     <tr>
+//       <th>Make</th>
+//       <th>Model</th>
+//       <th>0 - 100km/h</th>
+//     </tr>
+//     <tr>
+//       <td>Toyota</td>
+//       <td>Camry</td>
+//       <td>9.1 seconds</td>
+//     </tr>
+//     <tr>
+//       <td>Nissan</td>
+//       <td>Maxima J31</td>
+//       <td>8.6 seconds</td>
+//     </tr>
+//     <tr>
+//       <td>Toyota</td>
+//       <td>Camry</td>
+//       <td>9.1 seconds</td>
+//     </tr>
+//     <tr>
+//       <td>Nissan</td>
+//       <td>Maxima J31</td>
+//       <td>8.6 seconds</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// .table-condensed         - Condensed
+// .table-no-border         - Sans Border
+// .table-striped           - Zebra Striping
+//
+// Styleguide 12.0
+  table {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: @base-line-height;
+    max-width: 100%;
+    width: 100%;
+
+    tbody {
+      border: none;
+    }
+
+    caption {
+      font-weight: bold;
+      text-align: left;
+      line-height: 25px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid @table-border;
+      line-height: @base-line-height;
+      padding: 6px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font-weight: bold;
+    }
+  }
+
+
+// VARIATIONS
+// -------------------------------
+  // Condensed
+  .table-condensed {
+    th,
+    td {
+      padding: 4px 5px;
+    }
+  }
+
+  // Sans Border
+  .table-no-border {
+    th,
+    td {
+      border: none;
+    }
+  }
+
+  // Zebra Striping
+  .table-striped {
+    tbody {
+      tr:nth-child(even) td,
+      tr:nth-child(even) th {
+        background-color: @table-background-accent;
+      }
+    }
+    th,
+    td {
+      border-bottom: none;
+    }
+  }
+    // Manual Zebra Striping
+    tr.striped td,
+    tr.striped th {
+      background-color: @table-background-accent;
+    }

@@ -1,0 +1,239 @@
+@import "../base/_variables.less";
+@import "../base/_mixins.less";
+@import "_iconfonts.less";
+
+// The values for these variables will change when the structure of the project has settled down.
+//@import "_sprites_dev.less";
+@import "_sprites_prod.less";
+
+.site-nav-wrapper {
+    position: fixed;
+    z-index: 10000000;
+    top:0;
+    width:100%;
+    height: @primary-nav-height;
+    background: @primary-nav-color;
+}
+
+.nav-top-level {
+    padding: 0;
+    margin: 0;
+    float: left;
+    list-style-type:none;
+
+    > li {
+        float: left;
+        position: relative;
+        margin-right: 2px;
+
+        > a {
+            display: block;
+            padding: 0 20px 0 8px;
+            line-height: 40px;
+            color: @gray;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        &:hover,
+        &.hover {
+            .menu-panel {
+                display: block;
+            }
+
+            > a {
+                color: #FFF;
+            }
+
+            .icon-caret {
+                background-position: -32px -100px;
+            }
+        }
+    }
+
+    .icon-caret {
+        background: transparent url(@topNavSpriteUrl) no-repeat scroll -32px -70px;
+        display: block;
+        height: 40px;
+        position: absolute;
+        right: 7px;
+        top: 0;
+        width: 8px;
+    }
+
+    > .nav-home {
+
+        // box-sizing is border-box
+        // thus the width of the home icon
+        // is 24px + 12px + 8px (see rule for .nav-top-level > li > a)
+        > a {
+            width:44px;
+            height:40px;
+        }
+
+        i.icon-home {
+            top:6px;
+        }
+    }
+
+    &.site {
+        float:left;
+    }
+
+    &.network {
+        float:right;
+
+        > li {
+            > a {
+                padding-right: 8px;
+            } 
+        } 
+
+        > .nav-network {
+            > a {
+                padding-right: 23px;
+            }
+        }
+
+        > .nav-join {
+            > a {
+                color: #FFF;
+            }
+        }
+
+        > .nav-signin {
+            padding:6px 0 0;
+
+            > a {
+                line-height: 27px;
+                background-color: #888;
+                border: 1px solid #888;
+                border-radius:3px;
+                color: #FFF;
+                
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.site-nav {
+    position:relative;
+    height: @primary-nav-height;
+    margin:0 auto;
+
+    .menu-panel {
+        display: none;
+        position: absolute;
+        top: 40px;
+        z-index: 20;
+        border: 1px solid #CDCDCD;
+        box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+        z-index: 10000000;
+        background:#FFF;
+    }
+
+    .menu-links {
+        float:left;
+        margin:0;
+        padding: 7px 15px;
+        list-style-type:none;
+        background-color: #f7f7f7;
+        width:217px;
+
+        a {
+            text-decoration: none;
+            color: #666;
+            font-size:13px;
+            padding:8px 10px;
+            // margin:0 -10px;
+            width:100%;
+            line-height:16px;
+            display:inline-block;
+
+            &:hover {
+                text-decoration: none;
+                background-color:#FFF;
+            }
+
+            img {
+                border:none;
+            }
+        }
+
+        li {
+            border-top:1px solid #E3E3E3;
+            display:inline-block;
+            width:100%;
+            margin-bottom:0;
+
+            &:first-child {
+                border-top:0 none;
+            }
+        }
+
+        .vip {
+            a {
+                color:#006BB9;
+                font-weight:bold;
+
+                &:hover {
+                    color:#006BB9;
+                    font-weight:bold;
+                }
+            }
+        }
+    }
+
+    .menu-content {
+        float:left;
+
+        ul {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            float:left;
+        }
+    }
+
+    .arrow {
+        display:block;
+        background:transparent url(@topNavSpriteUrl) no-repeat scroll 0 -223px;
+        height:9px;
+        width:12px;
+        position:absolute;
+        top:-9px;
+        z-index:2;
+    }
+
+    .nav-help {
+        .arrow {
+            left: 15px;
+        }
+
+        .menu-links {
+            width: 246px;
+        }
+    }
+
+    .nav-membership {
+        .menu-panel {
+            padding:15px;
+        }
+    }
+}
+
+@media screen and (max-width:1229px) {
+    .site-nav {
+        width:@small-breakpoint;
+    }
+}
+
+@media screen and (min-width:1230px) {
+    .site-nav {
+        width:@large-breakpoint;
+    }
+}

@@ -1,0 +1,48 @@
+// Loaders
+//
+// Show an indicator when loading content
+//
+// Markup:
+// <section class="panel is-loading">contents</section>
+//
+// Styleguide 11.0
+
+.csstransforms .is-loading {
+    position: relative;
+
+    &:before {
+        background-color: #fff;
+        bottom:0;
+        content: "";
+        left: 0;
+        .opacity(50);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: @zindex-loader-bg;
+    }
+
+    &:after {
+        //background: url(@url-img-loader) no-repeat 0 0 transparent;
+        @loaderSize: 32px;
+        .animate(spin, .5s, 0s, linear, infinite, both alternate);
+        content: "\21ba";
+        font-family: 'csn-icons';
+        font-size: @loaderSize;
+        line-height: @loaderSize;
+        left: 50%;
+        margin: -(@loaderSize/2) 0 0 -(@loaderSize/2);
+        text-align: center;
+        position: absolute;
+        .square(@loaderSize);
+        top: 50%;
+        z-index: @zindex-loader-fg;
+    }
+}
+
+
+.is-loading {
+    &:after {
+        content: "Loading...";
+    }
+}

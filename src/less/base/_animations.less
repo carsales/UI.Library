@@ -1,0 +1,47 @@
+//
+// Animate
+//-----------------------------
+  .animate(@animation, @duration, @delay, @style, @iterations, @fill-mode) {
+    -webkit-animation: @animation @duration @delay @style @iterations;
+       -moz-animation: @animation @duration @delay @style @iterations;
+        -ms-animation: @animation @duration @delay @style @iterations;
+         -o-animation: @animation @duration @delay @style @iterations;
+            animation: @animation @duration @delay @style @iterations;
+    -webkit-animation-fill-mode: @fill-mode;
+       -moz-animation-fill-mode: @fill-mode;
+         -o-animation-fill-mode: @fill-mode;
+            animation-fill-mode: @fill-mode;
+  }
+
+//
+// Animations
+//-----------------------------
+  // Fade In
+  @-webkit-keyframes fadeIn {
+    0%   { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-moz-keyframes fadeIn {
+    0%   { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-ms-keyframes fadeIn {
+    0%   { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-o-keyframes fadeIn {
+    0%   { opacity:0; }
+    100% { opacity:1; }
+  }
+
+// Spin
+  @-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(-360deg); }
+  }
+  @-moz-keyframes spin {
+    100% { -moz-transform: rotate(-360deg); }
+  }
+  @-ms-keyframes spin {
+    100% { -ms-transform: rotate(-360deg); }
+  }
+
