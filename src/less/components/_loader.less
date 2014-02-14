@@ -7,7 +7,7 @@
 //
 // Styleguide 11.0
 
-.csstransforms .is-loading {
+.is-loading {
     position: relative;
 
     &:before {
@@ -25,10 +25,11 @@
     &:after {
         //background: url(@url-img-loader) no-repeat 0 0 transparent;
         @loaderSize: 32px;
-        .animate(spin, .5s, 0s, linear, infinite, both alternate);
+        .animate(spin, .7s, 0s, linear, infinite, both alternate);
         content: "\21ba";
+        color: #222;
         font-family: 'csn-icons';
-        font-size: @loaderSize;
+        font-size: 16px;
         line-height: @loaderSize;
         left: 50%;
         margin: -(@loaderSize/2) 0 0 -(@loaderSize/2);
@@ -41,8 +42,35 @@
 }
 
 
-.is-loading {
+.no-cssanimations .is-loading {
+  position: relative;
+
+
+    &:before {
+        background: #fff;
+        content: " ";
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";/* IE 8 */
+        filter: alpha(opacity=80);/* IE 5-7 */
+        opacity: 0.8;
+        min-width: 100px;
+        min-height: 100px;
+        position: absolute;
+        z-index: 1;
+    }
+
     &:after {
+        color: #000;
         content: "Loading...";
+        top: 50%;
+        left: 0;
+        right:0;
+        margin-top: -10px;
+        position: absolute;
+        text-align: center;
+        z-index: 2;
     }
 }
