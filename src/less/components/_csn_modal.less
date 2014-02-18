@@ -1,0 +1,51 @@
+.csn-modal-overlay {
+    z-index: 15000001;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background:rgba(255,255,255,0.9);
+}
+
+.csn-modal-container {
+    z-index: 15000002;
+    background: #FFF;
+	width:644px;
+    position: absolute;
+    min-height: 136px;
+
+    &.standard {
+        border-width:2px;
+        border-style:solid;
+        border-color:#333;
+        background-color:#1A1A1A;
+    }
+}
+
+    .csn-modal-container.is-loading .loading {
+        display: block;
+        margin: 80px auto;
+        padding-left: 20px;
+        background: url("http://www.carsales.com.au/CarContent/cs/ajax-loading.gif") no-repeat scroll 0 0 transparent;
+        line-height: 16px;
+        font-size: 12px;
+    }
+
+    .csn-modal-container > .btn-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        height: 24px;
+        width: 24px;
+        z-index: 2;
+        cursor: pointer;
+        background: url("http://www.carsales.com.au/carcontent/cs/listing-page/final/sprite-chrome.png") no-repeat scroll -312px -384px transparent;
+        overflow: hidden;
+        text-indent: -9999px;
+        display: none;
+    }
+
+        .csn-modal-container > .btn-close:hover {
+            background-position: -288px -384px;
+        }     
