@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>kss-node Styleguide</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="/css/library.css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.1.js"></script>
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <nav class="area-nav"></nav>
+    <header class="area-header">
+      <div class="container">
+        <a href="/" class="logo-brand">UI Styleguide</a>
+      </div>
+    </header>
+    <div class="site-body layout-sidebar-right">
+      <div class="layout-main">
+        <article class="kss-article">
+          
+          
+          <section id="section-2" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">2</span> Forms</h1>
+            
+            
+            <div class="kss-description">
+              <p>Description</p>
+
+            </div>
+            
+            
+          </section>
+          
+          <section id="section-2.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.1</span> Inline Forms</h1>
+            
+            
+            <div class="kss-description">
+              <p>Description</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <form class="form-inline">
+  <label>Username</label>
+  <div class="control">
+    <input type="text">
+  </div>
+  <label>Password</label>
+  <div class="control">
+    <input type="password">
+  </div>
+  <label class="checkbox-inline">
+    <input type="checkbox">Remember me
+  </label>
+  <div class="control">
+    <button>Sign In</button>
+  </div>
+</form>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;form class=&quot;form-inline&quot;&gt;
+  &lt;label&gt;Username&lt;/label&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+  &lt;/div&gt;
+  &lt;label&gt;Password&lt;/label&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;input type=&quot;password&quot;&gt;
+  &lt;/div&gt;
+  &lt;label class=&quot;checkbox-inline&quot;&gt;
+    &lt;input type=&quot;checkbox&quot;&gt;Remember me
+  &lt;/label&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;button&gt;Sign In&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-2.2" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.2</span> Horizontal Forms</h1>
+            
+            
+            <div class="kss-description">
+              <p>Description</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <form class="form-horizontal">
+  <div class="row">
+    <label class="col-3">Name</label>
+    <div class="control col-9">
+      <input type="text">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-3">Email</label>
+    <div class="control col-9">
+      <input type="email">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-3">Postcode</label>
+    <div class="control col-3">
+      <input type="number">
+    </div>
+    <label class="col-3">Phone</label>
+    <div class="control col-3">
+      <input type="tel">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-3">Terms and conditions</label>
+    <div class="control col-9">
+      <label class="checkbox-inline">
+        <input type="checkbox">I agree to terms and conditions
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-3">Ask a question?</label>
+    <div class="control col-9">
+      <label class="radio-inline">
+        <input type="radio">Yes
+      </label>
+      <label class="radio-inline">
+        <input type="radio">No
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="control col-9 col-offset-3">
+      <button>Sign In</button>
+    </div>
+  </div>
+</form>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;form class=&quot;form-horizontal&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Name&lt;/label&gt;
+    &lt;div class=&quot;control col-9&quot;&gt;
+      &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Email&lt;/label&gt;
+    &lt;div class=&quot;control col-9&quot;&gt;
+      &lt;input type=&quot;email&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Postcode&lt;/label&gt;
+    &lt;div class=&quot;control col-3&quot;&gt;
+      &lt;input type=&quot;number&quot;&gt;
+    &lt;/div&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Phone&lt;/label&gt;
+    &lt;div class=&quot;control col-3&quot;&gt;
+      &lt;input type=&quot;tel&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Terms and conditions&lt;/label&gt;
+    &lt;div class=&quot;control col-9&quot;&gt;
+      &lt;label class=&quot;checkbox-inline&quot;&gt;
+        &lt;input type=&quot;checkbox&quot;&gt;I agree to terms and conditions
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Ask a question?&lt;/label&gt;
+    &lt;div class=&quot;control col-9&quot;&gt;
+      &lt;label class=&quot;radio-inline&quot;&gt;
+        &lt;input type=&quot;radio&quot;&gt;Yes
+      &lt;/label&gt;
+      &lt;label class=&quot;radio-inline&quot;&gt;
+        &lt;input type=&quot;radio&quot;&gt;No
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;control col-9 col-offset-3&quot;&gt;
+      &lt;button&gt;Sign In&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-2.3" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.3</span> Vertical Forms</h1>
+            
+            
+            <div class="kss-description">
+              <p>Description</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <form class="form-vertical">
+  <label>Username</label>
+  <div class="control">
+    <input type="text">
+  </div>
+  <label>Password</label>
+  <div class="control">
+    <input type="password">
+  </div>
+  <div class="control">
+    <button>Sign In</button>
+  </div>
+</form>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;form class=&quot;form-vertical&quot;&gt;
+  &lt;label&gt;Username&lt;/label&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+  &lt;/div&gt;
+  &lt;label&gt;Password&lt;/label&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;input type=&quot;password&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;button&gt;Sign In&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-2.4" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.4</span> Controls</h1>
+            
+            
+            <div class="kss-description">
+              <p>Description</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <form class="form-vertical">
+  <div class="control {$modifiers}">
+    <input type="text">
+  </div>
+</form>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.control-thin</div>
+                  <div class="kss-modifier-description">
+                    <p>Small</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <form class="form-vertical">
+  <div class="control control-thin">
+    <input type="text">
+  </div>
+</form>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.control-medium</div>
+                  <div class="kss-modifier-description">
+                    <p>Medium</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <form class="form-vertical">
+  <div class="control control-medium">
+    <input type="text">
+  </div>
+</form>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.control-wide</div>
+                  <div class="kss-modifier-description">
+                    <p>Large</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <form class="form-vertical">
+  <div class="control control-wide">
+    <input type="text">
+  </div>
+</form>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;form class=&quot;form-vertical&quot;&gt;
+  &lt;div class=&quot;control {$modifiers}&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-2.4.1" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.4.1</span> Control Variants</h1>
+            
+            
+            <div class="kss-description">
+              <p>Input fields</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="control control-pin control-medium">
+  <input type="text"  class="input-medium" placeholder="3">
+  <input type="text"  class="input-medium" placeholder="0">
+  <input type="text"  class="input-medium" placeholder="0">
+  <input type="text"  class="input-medium" placeholder="0">
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;control control-pin control-medium&quot;&gt;
+  &lt;input type=&quot;text&quot;  class=&quot;input-medium&quot; placeholder=&quot;3&quot;&gt;
+  &lt;input type=&quot;text&quot;  class=&quot;input-medium&quot; placeholder=&quot;0&quot;&gt;
+  &lt;input type=&quot;text&quot;  class=&quot;input-medium&quot; placeholder=&quot;0&quot;&gt;
+  &lt;input type=&quot;text&quot;  class=&quot;input-medium&quot; placeholder=&quot;0&quot;&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          
+        </article>
+      </div>
+      <div class="layout-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <h1 class="kss-doc-title"><a href="./">Retail StyleGuide</a></h1>
+          </header>
+          <nav class="kss-nav">
+            <ul class="nav nav-vertical" data-kss-ref="2">
+              <li class="kss-menu-item"><a href="./index.html"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Buttons</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Forms</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">Typography</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">Carets</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-6.html"><span class="kss-ref">6</span><span class="kss-name">Tabs</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">Dropdowns</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-8.html"><span class="kss-ref">8</span><span class="kss-name">Pagination</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-9.html"><span class="kss-ref">9</span><span class="kss-name">Lists</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-10.html"><span class="kss-ref">10</span><span class="kss-name">Icon Fonts</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-11.html"><span class="kss-ref">11</span><span class="kss-name">Loaders</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-12.html"><span class="kss-ref">12</span><span class="kss-name">Tables</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-13.html"><span class="kss-ref">13</span><span class="kss-name">Panels</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-14.html"><span class="kss-ref">14</span><span class="kss-name">Media Block</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-15.html"><span class="kss-ref">15</span><span class="kss-name">Accordion</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-16.html"><span class="kss-ref">16</span><span class="kss-name">Grid</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-17.html"><span class="kss-ref">17</span><span class="kss-name">Badges and Flags</span></a></li>
+              
+            </ul>
+            
+            <ul class="kss-menu-child">
+              
+              
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-2.1"><span class="kss-ref">2.1</span><span class="kss-name">Inline Forms</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-2.2"><span class="kss-ref">2.2</span><span class="kss-name">Horizontal Forms</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-2.3"><span class="kss-ref">2.3</span><span class="kss-name">Vertical Forms</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-2.4"><span class="kss-ref">2.4</span><span class="kss-name">Controls</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-2.4.1"><span class="kss-ref">2.4.1</span><span class="kss-name">Control Variants</span></a></li>
+              
+              
+            </ul>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>
