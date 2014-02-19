@@ -10,6 +10,7 @@
 //
 // .panel-highlighted           - Highlighted
 // .panel-brand                 - Branded
+// .panel-contained             - Bordered panel
 // .panel-message-success       - Success Message
 // .panel-message-error         - Error Message
 //
@@ -47,6 +48,11 @@
 
     .panel-highlighted {
       background: @background-accent-color;
+      padding: @large-spacing;
+    }
+
+    .panel-contained {
+      border: solid 1px @base-border-color;
       padding: @large-spacing;
     }
 
