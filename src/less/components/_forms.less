@@ -61,7 +61,7 @@
 
   input[type="radio"],
   input[type="checkbox"] {
-    margin-top: 3px;
+    margin-top: 7px;
     float: left;
     margin-right: 6px;
   }
@@ -75,9 +75,9 @@
     line-height: normal;
     vertical-align: middle; // Need this to stop weird white space below 2 adjacent elements
 
-    /*&+& {
-      margin-left: 10px;
-    }*/
+    // &+& {
+    //   margin-left: 10px;
+    // }
 
     input[type="radio"],
     input[type="checkbox"] {
@@ -251,6 +251,14 @@
     .form-vertical {
       .control {
         margin-bottom: 8px;
+      }
+      .checkbox,
+      .radio {
+        cursor: pointer;
+        display: block;
+        margin-bottom: 0; // If applied to .control element
+        line-height: normal;
+        vertical-align: middle; // Need this to stop weird white space below 2 adjacent elements
       }
       label {
         line-height: @label-line-height;
