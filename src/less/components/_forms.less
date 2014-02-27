@@ -99,6 +99,19 @@
     min-height: 23px;
   }
 
+  .checkbox,
+  .radio {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0; // If applied to .control element
+    vertical-align: middle; // Need this to stop weird white space below 2 adjacent elements
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-top: 4px;
+    }
+  }
+
   // Inline Forms
   //
   // Description
@@ -252,14 +265,6 @@
       .control {
         margin-bottom: 8px;
       }
-      .checkbox,
-      .radio {
-        cursor: pointer;
-        display: block;
-        margin-bottom: 0; // If applied to .control element
-        line-height: normal;
-        vertical-align: middle; // Need this to stop weird white space below 2 adjacent elements
-      }
       label {
         line-height: @label-line-height;
       }
@@ -342,12 +347,12 @@
         width: 50px;
         z-index: @zindex-base;
 
+        &:first-child {
+          margin-left: 0;
+        }
+
       &:focus {
         z-index: @zindex-base + 1;
-      }
-
-      &:last-child {
-        margin-right: @base-spacing - 3; // Subtract 3 due to inline-block spacing
       }
     }
   }
