@@ -51,19 +51,19 @@
               <div class="kss-modifier kss-modifier-original">
                 <div class="kss-modifier-example">
                   <form class="form-inline">
-  <label>Username</label>
-  <div class="control">
+  <label>Name</label>
+  <div class="control control-thin">
     <input type="text">
   </div>
-  <label>Password</label>
-  <div class="control">
-    <input type="password">
+  <label>Email</label>
+  <div class="control control-thin">
+    <input type="email">
   </div>
-  <label class="checkbox-inline">
-    <input type="checkbox">Remember me
+  <label class="checkbox">
+    <input type="checkbox">Remember Me
   </label>
   <div class="control">
-    <button>Sign In</button>
+    <button>Go</button>
   </div>
 </form>
                 </div>
@@ -71,19 +71,19 @@
               
               <div class="kss-markup">
                 <pre><code data-language="html">&lt;form class=&quot;form-inline&quot;&gt;
-  &lt;label&gt;Username&lt;/label&gt;
-  &lt;div class=&quot;control&quot;&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;div class=&quot;control control-thin&quot;&gt;
     &lt;input type=&quot;text&quot;&gt;
   &lt;/div&gt;
-  &lt;label&gt;Password&lt;/label&gt;
-  &lt;div class=&quot;control&quot;&gt;
-    &lt;input type=&quot;password&quot;&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;div class=&quot;control control-thin&quot;&gt;
+    &lt;input type=&quot;email&quot;&gt;
   &lt;/div&gt;
-  &lt;label class=&quot;checkbox-inline&quot;&gt;
-    &lt;input type=&quot;checkbox&quot;&gt;Remember me
+  &lt;label class=&quot;checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot;&gt;Remember Me
   &lt;/label&gt;
   &lt;div class=&quot;control&quot;&gt;
-    &lt;button&gt;Sign In&lt;/button&gt;
+    &lt;button&gt;Go&lt;/button&gt;
   &lt;/div&gt;
 &lt;/form&gt;</code></pre>
               </div>
@@ -229,7 +229,15 @@
   <div class="control">
     <input type="password">
   </div>
-  <div class="control">
+  <div class="control checkbox">
+    <input type="checkbox" id="remember" name="remember">
+    <label for="remember">Remember Me</label>
+  </div>
+  <div class="control checkbox">
+    <input type="checkbox" id="remember" name="remember">
+    <label for="remember">Remember Me</label>
+  </div>
+  <div class="form-actions">
     <button>Sign In</button>
   </div>
 </form>
@@ -246,7 +254,15 @@
   &lt;div class=&quot;control&quot;&gt;
     &lt;input type=&quot;password&quot;&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;control&quot;&gt;
+  &lt;div class=&quot;control checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;remember&quot; name=&quot;remember&quot;&gt;
+    &lt;label for=&quot;remember&quot;&gt;Remember Me&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;control checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;remember&quot; name=&quot;remember&quot;&gt;
+    &lt;label for=&quot;remember&quot;&gt;Remember Me&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-actions&quot;&gt;
     &lt;button&gt;Sign In&lt;/button&gt;
   &lt;/div&gt;
 &lt;/form&gt;</code></pre>

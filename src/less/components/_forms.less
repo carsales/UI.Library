@@ -66,6 +66,10 @@
     margin-right: 6px;
   }
 
+  .form-actions {
+    margin-top: @base-spacing;
+  }
+
   // Use .checkbox/radio-inline for a series of radio/checkboxes next to each other
   // TODO: This could be the default behavior for the radio/checkboxes instead of an explicit class
   .radio-inline,
@@ -118,19 +122,19 @@
   //
   // Markup:
   // <form class="form-inline">
-  //   <label>Username</label>
-  //   <div class="control">
+  //   <label>Name</label>
+  //   <div class="control control-thin">
   //     <input type="text">
   //   </div>
-  //   <label>Password</label>
-  //   <div class="control">
-  //     <input type="password">
+  //   <label>Email</label>
+  //   <div class="control control-thin">
+  //     <input type="email">
   //   </div>
-  //   <label class="checkbox-inline">
-  //     <input type="checkbox">Remember me
+  //   <label class="checkbox">
+  //     <input type="checkbox">Remember Me
   //   </label>
   //   <div class="control">
-  //     <button>Sign In</button>
+  //     <button>Go</button>
   //   </div>
   // </form>
   //
@@ -150,6 +154,11 @@
           margin-right: 0; // When a form is right aligned, it cant have a right margin
         }
       }
+
+      .checkbox { &:extend(.checkbox-inline);}
+        .checkbox input[type="checkbox"] { margin-top: 2px; }
+      .radio { &:extend(.radio-inline);}
+        .radio input[type="radio"] { margin-top: 2px; }
 
       label,
       .control {
@@ -255,7 +264,15 @@
   //   <div class="control">
   //     <input type="password">
   //   </div>
-  //   <div class="control">
+  //   <div class="control checkbox">
+  //     <input type="checkbox" id="remember" name="remember">
+  //     <label for="remember">Remember Me</label>
+  //   </div>
+  //   <div class="control checkbox">
+  //     <input type="checkbox" id="remember" name="remember">
+  //     <label for="remember">Remember Me</label>
+  //   </div>
+  //   <div class="form-actions">
   //     <button>Sign In</button>
   //   </div>
   // </form>
@@ -287,6 +304,16 @@
         .uneditable-input {
           width:100%;
         }
+
+      .checkbox,
+      .radio {
+        margin-bottom: 0; // If applied to .control element
+
+        input[type="radio"],
+        input[type="checkbox"] {
+          margin-top: 7px;
+        }
+      }
     }
 
   // Controls
