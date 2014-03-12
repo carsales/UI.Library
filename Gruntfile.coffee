@@ -149,14 +149,22 @@ module.exports = (grunt) ->
           spawn: false
           interupt: true
 
+    'gh-pages':
+      options:
+        base: 'site'
+
+      src: ['**']
+
+
   # Load grunt tasks
   require('load-grunt-tasks')(grunt);
 
   # Default task(s).
+  grunt.registerTask 'default',     ['concurrent:less']
   grunt.registerTask 'test',        ['jshint', 'csslint']
   grunt.registerTask 'server',      ['concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
-  grunt.registerTask 'default',     ['concurrent:less']
   grunt.registerTask 'production',  ['cssmin', 'styleguide']
+  grunt.registerTask 'deploy',      ['concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'gh-pages']
 
 
 # Variables Used in the build process
