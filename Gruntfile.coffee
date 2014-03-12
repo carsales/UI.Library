@@ -162,7 +162,7 @@ module.exports = (grunt) ->
   # Default task(s).
   grunt.registerTask 'default',     ['concurrent:less']
   grunt.registerTask 'test',        ['jshint', 'csslint']
-  grunt.registerTask 'server',      ['concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
+  grunt.registerTask 'server',      ['less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
   grunt.registerTask 'production',  ['cssmin', 'styleguide']
   grunt.registerTask 'deploy',      ['concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'gh-pages']
 
