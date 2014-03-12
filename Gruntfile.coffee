@@ -109,7 +109,7 @@ module.exports = (grunt) ->
     # Run JS Hint on the files
     jshint:
       options:
-        asi: false
+        jshintrc: '.jshintrc'
       check: [
         'src/js/**/*.js'
       ]
@@ -124,6 +124,11 @@ module.exports = (grunt) ->
           open:
             target: 'http://localhost:<%= connect.server.options.port %>' # target url to open
 
+    # Concurrency
+    concurrent:
+      less: ['less:styleguide', 'less:skins']
+      test: ['jshint']
+
     # Watch these files for changes
     watch:
       options:
@@ -132,7 +137,7 @@ module.exports = (grunt) ->
 
       less:
         files: ['src/less/**/*.less']
-        tasks: ['less:styleguide', 'less:skins', 'autoprefixer', 'copy:main', 'styleguide:library']
+        tasks: ['concurrent:less', 'autoprefixer', 'copy:main', 'styleguide:library']
         options:
           spawn: false
           interupt: true
@@ -148,10 +153,10 @@ module.exports = (grunt) ->
   require('load-grunt-tasks')(grunt);
 
   # Default task(s).
-  grunt.registerTask 'test',        ['less', 'styleguide']
-  grunt.registerTask 'server',      ['less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
-  grunt.registerTask 'default',     ['less']
-  grunt.registerTask 'production',  ['csso', 'styleguide']
+  grunt.registerTask 'test',        ['jshint', 'csslint']
+  grunt.registerTask 'server',      ['concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
+  grunt.registerTask 'default',     ['concurrent:less']
+  grunt.registerTask 'production',  ['cssmin', 'styleguide']
 
 
 # Variables Used in the build process

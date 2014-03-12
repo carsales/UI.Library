@@ -4,7 +4,7 @@
   "description": "CSN Styleguide",
   "main": "index.js",
   "scripts": {
-    "test": "Test"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-html-validation": "~0.1.13",
     "load-grunt-tasks": "~0.2.1",
-    "grunt-webfont": "~0.3.2"
+    "grunt-webfont": "~0.3.2",
+    "grunt-concurrent": "~0.5.0"
   }
 }

@@ -47,7 +47,7 @@
             }
 
             this.overlay.one('click', _closeModal);
-			this.isOpen = true;
+            this.isOpen = true;
         }, _addCloseButton = function () {
             this.element.append('<span class="btn btn-close" title="Close">Close</span>').find('.btn-close').one('click', _closeModal);
         }, _closeModal;

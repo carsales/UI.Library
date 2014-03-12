@@ -131,10 +131,10 @@ Example: 1 - perform ajax on click
         contentBodyId = link.data("ajax-link");
 
         if (contentBodyId && remoteUrl) {
-                
+
             link.on("click", function (event) {
                 event.preventDefault();
-                
+
                 var contentBody = $("#" + contentBodyId);
                 $.ajax(remoteUrl, {
                     success: function (data) {
