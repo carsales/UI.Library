@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Carsales UI Styleguide</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="/css/library.css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.1.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script> <!-- Calling some jquery plugins mid-page for docs purposes. Need to load this first -->
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <nav class="area-nav"></nav>
+    <header class="area-header">
+      <div class="container">
+        <a href="/" class="logo-brand">UI Styleguide</a>
+      </div>
+    </header>
+    <div class="site-body layout-sidebar-right">
+      <div class="layout-main">
+        <article class="kss-article">
+          
+          
+          <section id="section-5" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">5</span> Carets</h1>
+            
+            
+            <div class="kss-description">
+              <p>When you need to indicate movement or give additional emphasis to a piece of text</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <i class="caret {$modifiers}"></i>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.north</div>
+                  <div class="kss-modifier-description">
+                    <p>North</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <i class="caret north"></i>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.south</div>
+                  <div class="kss-modifier-description">
+                    <p>South</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <i class="caret south"></i>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.east</div>
+                  <div class="kss-modifier-description">
+                    <p>East</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <i class="caret east"></i>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.west</div>
+                  <div class="kss-modifier-description">
+                    <p>West</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <i class="caret west"></i>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;i class=&quot;caret {$modifiers}&quot;&gt;&lt;/i&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-5.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">5.1</span> Active States</h1>
+            
+            
+            <div class="kss-description">
+              <p>When a caret is activated, such as when the user clicks on a drop down menu.</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="is-active">
+  <i class="caret {$modifiers}"></i>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.north</div>
+                  <div class="kss-modifier-description">
+                    <p>Active North</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="is-active">
+  <i class="caret north"></i>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.south</div>
+                  <div class="kss-modifier-description">
+                    <p>Active South</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="is-active">
+  <i class="caret south"></i>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.east</div>
+                  <div class="kss-modifier-description">
+                    <p>Active East</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="is-active">
+  <i class="caret east"></i>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.west</div>
+                  <div class="kss-modifier-description">
+                    <p>Active West</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="is-active">
+  <i class="caret west"></i>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;is-active&quot;&gt;
+  &lt;i class=&quot;caret {$modifiers}&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          
+        </article>
+      </div>
+      <div class="layout-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <h1 class="kss-doc-title"><a href="./">UI Styleguide</a></h1>
+          </header>
+          <nav class="kss-nav">
+            <ul class="nav nav-vertical" data-kss-ref="5">
+              <li class="kss-menu-item"><a href="./index.html"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Buttons</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Forms</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">Typography</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">Carets</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-6.html"><span class="kss-ref">6</span><span class="kss-name">Tabs</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">Dropdowns</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-8.html"><span class="kss-ref">8</span><span class="kss-name">Pagination</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-9.html"><span class="kss-ref">9</span><span class="kss-name">Lists</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-10.html"><span class="kss-ref">10</span><span class="kss-name">Icon Fonts</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-11.html"><span class="kss-ref">11</span><span class="kss-name">Loaders</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-12.html"><span class="kss-ref">12</span><span class="kss-name">Tables</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-13.html"><span class="kss-ref">13</span><span class="kss-name">Panels</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-14.html"><span class="kss-ref">14</span><span class="kss-name">Media Block</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-15.html"><span class="kss-ref">15</span><span class="kss-name">Accordion</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-16.html"><span class="kss-ref">16</span><span class="kss-name">Grid</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-17.html"><span class="kss-ref">17</span><span class="kss-name">Badges and Flags</span></a></li>
+              
+            </ul>
+            
+            <ul class="kss-menu-child">
+              
+              
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-5.1"><span class="kss-ref">5.1</span><span class="kss-name">Active States</span></a></li>
+              
+              
+            </ul>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>
