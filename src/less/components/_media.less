@@ -57,11 +57,18 @@
 
 // Media block as link
 // -------------------------
-  a.media .media-heading {
-    color: @link-color;
-    font-weight: bold;
+  a.media {
+    .media-heading {
+      color: @link-color;
+      font-weight: bold;
+    }
+    &:hover {
+      text-decoration: none;
+      .media-heading {
+        color: @hover-color;
+      }
+    }
   }
-    a.media:hover .media-heading { color: @hover-color; text-decoration: none; }
 
 // With sidebar
 //
