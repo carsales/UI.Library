@@ -156,7 +156,7 @@ module.exports = (grunt) ->
           interupt: true
 
       js:
-        files: ['src/js/**/*.js']
+        files: ['src/js/**/*.js', '.jshintrc']
         tasks: ['jshint']
         options:
           spawn: false
