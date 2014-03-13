@@ -1,5 +1,6 @@
 Carsales Network Styleguide
 ===========================
+[![Build Status](https://travis-ci.org/carsales/UI.Library.png?branch=master)](https://travis-ci.org/carsales/UI.Library) [![Dependency Status](https://gemnasium.com/carsales/UI.Library.png)](https://gemnasium.com/carsales/UI.Library)
 
 _Brought to you by_ __Club FED__
 
