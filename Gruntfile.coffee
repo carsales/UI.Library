@@ -137,7 +137,7 @@ module.exports = (grunt) ->
 
       less:
         files: ['src/less/**/*.less']
-        tasks: ['concurrent:less', 'autoprefixer', 'copy:main', 'styleguide:library']
+        tasks: ['less:styleguide', 'less:skins', 'autoprefixer', 'copy:main', 'styleguide:library']
         options:
           spawn: false
           interupt: true
