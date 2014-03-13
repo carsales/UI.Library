@@ -4,6 +4,10 @@ module.exports = (grunt) ->
     # Read NPM Package
     pkg: grunt.file.readJSON('package.json')
 
+    # Clean the site directory
+    clean:
+      site: ['site']
+
     # Less compilation
     less:
       styleguide:
@@ -30,12 +34,11 @@ module.exports = (grunt) ->
     # Minify the css
     cssmin:
       compress:
-        files:
-          expand  : true,
-          cwd     : 'dist/css/'
-          src     : ['*.css']
-          dest    : 'dist/css/'
-          ext     : '.min.css'
+        expand: true,
+        cwd: 'site/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'site/css/',
+        ext: '.min.css'
 
     # Run CSS Lint
     csslint:
@@ -114,6 +117,12 @@ module.exports = (grunt) ->
         'src/js/**/*.js'
       ]
 
+    # Js Minification
+    uglify:
+      dist:
+        files:
+          'site/js/ui.min.js': ['src/js/**/*.js']
+
     # Run a server
     connect:
       server:
@@ -127,13 +136,17 @@ module.exports = (grunt) ->
     # Concurrency
     concurrent:
       less: ['less:styleguide', 'less:skins']
-      test: ['jshint']
+      dist: ['cssmin:compress', 'uglify:dist']
 
     # Watch these files for changes
     watch:
       options:
         livereload: 35900
         interrupt: true
+
+      # css:
+      #   files: ['site/css/*.css']
+      #   tasks: ['cssmin']
 
       less:
         files: ['src/less/**/*.less']
@@ -149,6 +162,18 @@ module.exports = (grunt) ->
           spawn: false
           interupt: true
 
+    # Create a zip file of the site files
+    compress:
+      main:
+        options:
+          archive: 'site/files/cs-ui.zip'
+
+        files: [{
+          src: ['site/**']
+          dest: 'site/files'
+        }]
+
+    # Github pages deployment
     'gh-pages':
       options:
         base: 'site'
@@ -163,8 +188,8 @@ module.exports = (grunt) ->
   grunt.registerTask 'default',     ['concurrent:less']
   grunt.registerTask 'test',        ['jshint', 'csslint']
   grunt.registerTask 'server',      ['less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
-  grunt.registerTask 'production',  ['cssmin', 'styleguide']
-  grunt.registerTask 'deploy',      ['concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'gh-pages']
+  grunt.registerTask 'production',  ['concurrent:dist', 'styleguide']
+  grunt.registerTask 'deploy',      ['concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'concurrent:dist', 'compress', 'gh-pages']
 
 
 # Variables Used in the build process
