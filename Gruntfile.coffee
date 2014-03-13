@@ -22,7 +22,7 @@ module.exports = (grunt) ->
         files: [{
           expand: true               # Enable dynamic expansion.
           cwd: 'src/less/skin'       # Src matches are relative to this path.
-          src: ['**/style-*.less']  # Actual pattern(s) to match.
+          src: ['**/style-*.less']   # Actual pattern(s) to match.
           dest: 'src/css/'           # Destination path prefix.
           ext: '.css'                # Dest filepaths will have this extension.
         }]
