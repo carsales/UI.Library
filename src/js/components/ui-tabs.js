@@ -20,8 +20,7 @@
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
-
+  "use strict";
 
  /* TAB CLASS DEFINITION
   * ==================== */
@@ -72,9 +71,7 @@
 
   , activate: function ( element, container, callback) {
       var $active = container.find('> .is-active')
-        , transition = callback
-            && $.support.transition
-            && $active.hasClass('fade')
+        , transition = callback && $.support.transition && $active.hasClass('fade')
 
       function next() {
         $active

@@ -6,7 +6,7 @@
 
 !function ($) {
 
-    "use strict"; // jshint ;_;
+    "use strict";
 
 
     /* DROPDOWN CLASS DEFINITION
