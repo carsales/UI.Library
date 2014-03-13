@@ -1,6 +1,6 @@
 ﻿//
-// NEW LAYOUTS
-// To replace old layouts below
+// LAYOUTS
+// Includes yet-to-be-activated media queries
 // -----------------------------------------
 
 // Variables
@@ -22,8 +22,6 @@
         display: table;
         margin: 0 auto;
         width: @base-layout-width - (@base-outer-spacing * 2);
-        //padding: 10px;
-        //width: 100%;
         transition: all 0.25s;
 
         /*@media (min-width: @large-breakpoint) {
@@ -38,6 +36,12 @@
         .is-modal & {
             width: 100%;
         }
+
+        .layout-body { // Wrapper of main and sidebar
+            display: table;
+            margin-top: @large-spacing;
+            width: 100%;
+        }
     }
 
     .layout-sidebar,
@@ -48,7 +52,7 @@
         vertical-align: top;
 
         /*@media (max-width: @small-breakpoint) {
-            border-width: @small-outer-spacing;
+            padding: @small-outer-spacing;
         }*/
 
         /*@media (min-width: @large-breakpoint) {
@@ -58,7 +62,6 @@
     }
 
     .layout-main {
-        width: 100%;
         /*@media (max-width: @small-breakpoint) {
             border-color: rgb(231,0,51);
         }*/
@@ -100,7 +103,6 @@
         width: @container-width;
         *zoom: 1;
 
-        // Not using the following as Manu didnt want it in place for the time being
         /*@media (min-width: @screen-large){
             width: 1200px;
         }*/
