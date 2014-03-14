@@ -93,6 +93,8 @@ module.exports = (grunt) ->
         pretty: true
         data:
           timestamp: "<%= new Date().getTime() %>"
+
+      # Local build
       build:
         options:
           data:
@@ -107,13 +109,6 @@ module.exports = (grunt) ->
           ext: '.html'
         }]
 
-      pages:
-        options:
-          data:
-            sitepath: '/UI.Library/css'
-
-        files: '<%= jade.build.files %>'
-
       styleguide:
         options:
           data:
@@ -121,6 +116,15 @@ module.exports = (grunt) ->
             stylepath: '/styleguide'
         files:
           'src/styleguide-template/index.html' : 'src/jade/styleguide.jade'
+
+      # Github pages build
+      pages:
+        options:
+          data:
+            sitepath: '/UI.Library/css'
+
+        files: '<%= jade.build.files %>'
+
 
       styleguidePages:
         options:
