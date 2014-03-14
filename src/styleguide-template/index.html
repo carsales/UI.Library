@@ -1,109 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Carsales UI Styleguide</title>
-    <meta name="description" content="" />
-    <meta name="generator" content="kss-node" />
-    <link rel="stylesheet" href="public/kss.css" />
-    <link rel="stylesheet" href="/css/library.css" />
-    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.1.js"></script>
-    <script src="public/jquery-1.9.1.min.js"></script> <!-- Calling some jquery plugins mid-page for docs purposes. Need to load this first -->
-    <!--[if lt IE 9]>
-    <script src="public/html5shiv.js"></script>
-    <![endif]-->
-  </head>
-  <body id="kss-node">
-    <nav class="area-nav"></nav>
-    <header class="area-header">
-      <div class="container">
-        <a href="/" class="logo-brand">UI Styleguide</a>
-      </div>
-    </header>
-    <div class="site-body layout-sidebar-right">
-      <div class="layout-main">
-        <article class="kss-article">
-          {{#if overview}}
-          <section id="section-0" class="kss-section kss-overview">
-            {{html overview}}
-          </section>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Carsales UI Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <link rel="stylesheet" href="/styleguide/public/kss.css">
+  <link rel="stylesheet" href="/css/library.css">
+  <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.1.js"></script>
+  <script src="/styleguide/public/jquery-1.9.1.min.js"></script>
+  <!--Calling some jquery plugins mid-page for docs purposes. Need to load this first
+  -->
+  <!--if lt IE 9script(src='/styleguide/public/html5shiv.js')
+  -->
+</head>
+<body id="kss-node">
+  <nav class="area-nav"></nav>
+  <header class="area-header">
+    <div class="container"><a href="/" class="logo-brand">UI Styleguide</a></div>
+  </header>
+  <div class="site-body layout-sidebar-right">
+    <div class="layout-main">
+      <article class="kss-article">{{#if overview}}
+        <section id="section-0" class="kss-section kss-overview">{{html overview}}</section>{{else}}
+        {{#eachSection rootNumber}}
+        <section id="section-">{{reference}}.kss-section.kss-depth-{{refDepth}}
+          <h1 class="kss-title"><span class="kss-ref">{{reference}}</span>{{header}}</h1>{{#ifAny markup modifiers}}
+          {{#if description}}
+          <div class="kss-description">{{html description}}</div>{{/if}}
+          <div class="kss-modifier-block">
+            <div class="kss-modifier kss-modifier-original">
+              <div class="kss-modifier-example">{{modifierMarkup}}</div>
+            </div>{{#eachModifier}}
+            <div class="kss-modifier">
+              <div class="kss-modifier-head">
+                <div class="kss-modifier-name">{{name}}</div>
+                <div class="kss-modifier-description">{{html description}}</div>
+              </div>
+              <div class="kss-modifier-example">{{modifierMarkup}}</div>
+            </div>{{/eachModifier}}
+            <div class="kss-markup">
+              <pre></pre>
+            </div>
+          </div>{{else}}
+          {{#if description}}
+          <div class="kss-description">{{html description}}</div>{{/if}}
+          {{/ifAny}}
+        </section>{{/eachSection}}
+        {{/if}}
+      </article>
+    </div>
+    <div class="layout-sidebar">
+      <div class="kss-sidebar-inner">
+        <header class="kss-header">
+          <h1 class="kss-doc-title"><a href="./">UI Styleguide</a></h1>
+        </header>
+        <nav class="kss-nav">
+          <ul data-kss-ref="{{rootNumber}}" class="nav nav-vertical">
+            <li class="kss-menu-item"><a href="./index.html"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>{{#eachRoot}}
+            <li class="kss-menu-item"><a href="section-{{reference}}.html"><span class="kss-ref">{{reference}}</span><span class="kss-name">{{header}}</span></a></li>{{/eachRoot}}
+          </ul>{{#if overview}}
           {{else}}
-          {{#eachSection rootNumber}}
-          <section id="section-{{reference}}" class="kss-section kss-depth-{{refDepth}}">
-            <h1 class="kss-title"><span class="kss-ref">{{reference}}</span> {{header}}</h1>
-            {{#ifAny markup modifiers}}
-            {{#if description}}
-            <div class="kss-description">
-              {{html description}}
-            </div>
-            {{/if}}
-            <div class="kss-modifier-block">
-              <div class="kss-modifier kss-modifier-original">
-                <div class="kss-modifier-example">
-                  {{modifierMarkup}}
-                </div>
-              </div>
-              {{#eachModifier}}
-              <div class="kss-modifier">
-                <div class="kss-modifier-head">
-                  <div class="kss-modifier-name">{{name}}</div>
-                  <div class="kss-modifier-description">
-                    {{html description}}
-                  </div>
-                </div>
-                <div class="kss-modifier-example">
-                  {{modifierMarkup}}
-                </div>
-              </div>
-              {{/eachModifier}}
-              <div class="kss-markup">
-                <pre><code data-language="html">{{markup}}</code></pre>
-              </div>
-            </div>
+          <ul class="kss-menu-child">
+            {{#eachSection rootNumber}}
+            {{#whenDepth 1}}
             {{else}}
-            {{#if description}}
-            <div class="kss-description">
-              {{html description}}
-            </div>
-            {{/if}}
-            {{/ifAny}}
-          </section>
-          {{/eachSection}}
-          {{/if}}
-        </article>
-      </div>
-      <div class="layout-sidebar">
-        <div class="kss-sidebar-inner">
-          <header class="kss-header">
-            <h1 class="kss-doc-title"><a href="./">UI Styleguide</a></h1>
-          </header>
-          <nav class="kss-nav">
-            <ul class="nav nav-vertical" data-kss-ref="{{rootNumber}}">
-              <li class="kss-menu-item"><a href="./index.html"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
-              {{#eachRoot}}
-              <li class="kss-menu-item"><a href="section-{{reference}}.html"><span class="kss-ref">{{reference}}</span><span class="kss-name">{{header}}</span></a></li>
-              {{/eachRoot}}
-            </ul>
-            {{#if overview}}
-            {{else}}
-            <ul class="kss-menu-child">
-              {{#eachSection rootNumber}}
-              {{#whenDepth 1}}
-              {{else}}
-              <li class="kss-menu-item"><a href="#section-{{reference}}"><span class="kss-ref">{{reference}}</span><span class="kss-name">{{header}}</span></a></li>
-              {{/whenDepth}}
-              {{/eachSection}}
-            </ul>
-            {{/if}}
-          </nav>
-        </div>
+            <li class="kss-menu-item"><a href="#section-{{reference}}"><span class="kss-ref">{{reference}}</span><span class="kss-name">{{header}}</span></a></li>{{/whenDepth}}
+            {{/eachSection}}
+          </ul>{{/if}}
+        </nav>
       </div>
     </div>
-    <script src="public/kss.js"></script>
-    <!--[if gt IE 8]><!-->
-    <script src="public/rainbow.min.js"></script>
-    <!--<![endif]-->
-    <script src="public/main.js"></script>
-  </body>
-</html>
+  </div>
+  <script src="/styleguide/public/kss.js"></script>
+  <!--if gt IE 8-->
+  <script src="/styleguide/public/rainbow.min.js"></script>
+  <!--<![endif]
+  -->
+  <script src="/styleguide/public/main.js"></script>
+</body>

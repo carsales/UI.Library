@@ -1,0 +1,98 @@
+doctype html
+html(lang='en')
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+  title Carsales UI Styleguide
+  meta(name='description', content='')
+  meta(name='generator', content='kss-node')
+  link(rel='stylesheet', href='#{stylepath}/public/kss.css')
+  link(rel='stylesheet', href='#{sitepath}/library.css')
+  script(src='http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.1.js')
+  script(src='#{stylepath}/public/jquery-1.9.1.min.js')
+  //
+     Calling some jquery plugins mid-page for docs purposes. Need to load this first
+  //if lt IE 9
+    script(src='#{stylepath}/public/html5shiv.js')
+body#kss-node
+  nav.area-nav
+  header.area-header
+    .container
+      a.logo-brand(href='/') UI Styleguide
+  .site-body.layout-sidebar-right
+    .layout-main
+      article.kss-article
+        | {{#if overview}}
+        section#section-0.kss-section.kss-overview
+          | {{html overview}}
+        | {{else}}
+        | {{#eachSection rootNumber}}
+        section#section-{{reference}}.kss-section.kss-depth-{{refDepth}}
+          h1.kss-title
+            span.kss-ref {{reference}}
+            | {{header}}
+          | {{#ifAny markup modifiers}}
+          | {{#if description}}
+          .kss-description
+            | {{html description}}
+          | {{/if}}
+          .kss-modifier-block
+            .kss-modifier.kss-modifier-original
+              .kss-modifier-example
+                | {{modifierMarkup}}
+            | {{#eachModifier}}
+            .kss-modifier
+              .kss-modifier-head
+                .kss-modifier-name {{name}}
+                .kss-modifier-description
+                  | {{html description}}
+              .kss-modifier-example
+                | {{modifierMarkup}}
+            | {{/eachModifier}}
+            .kss-markup
+              pre.
+
+          | {{else}}
+          | {{#if description}}
+          .kss-description
+            | {{html description}}
+          | {{/if}}
+          | {{/ifAny}}
+        | {{/eachSection}}
+        | {{/if}}
+    .layout-sidebar
+      .kss-sidebar-inner
+        header.kss-header
+          h1.kss-doc-title
+            a(href='./') UI Styleguide
+        nav.kss-nav
+          ul.nav.nav-vertical(data-kss-ref='{{rootNumber}}')
+            li.kss-menu-item
+              a(href='./index.html')
+                span.kss-ref 0
+                span.kss-name Overview
+            | {{#eachRoot}}
+            li.kss-menu-item
+              a(href='section-{{reference}}.html')
+                span.kss-ref {{reference}}
+                span.kss-name {{header}}
+            | {{/eachRoot}}
+          | {{#if overview}}
+          | {{else}}
+          ul.kss-menu-child
+            | {{#eachSection rootNumber}}
+            | {{#whenDepth 1}}
+            | {{else}}
+            li.kss-menu-item
+              a(href='#section-{{reference}}')
+                span.kss-ref {{reference}}
+                span.kss-name {{header}}
+            | {{/whenDepth}}
+            | {{/eachSection}}
+          | {{/if}}
+  script(src='#{stylepath}/public/kss.js')
+  //if gt IE 8
+  script(src='#{stylepath}/public/rainbow.min.js')
+  //
+    <![endif]
+  script(src='#{stylepath}/public/main.js')

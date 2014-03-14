@@ -1,0 +1,16 @@
+extends common/layout
+
+block append head
+   link(href='#{sitepath}/library.css', media="all", rel="stylesheet", type="text/css")
+
+
+block main-content
+
+  .row
+    .col-8
+      include:markdown ../../README.md
+
+    .col-4
+      ul.nav
+        li.nav-header General
+        li: a(href="/styleguide") Styleguide

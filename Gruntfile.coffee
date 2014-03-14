@@ -86,6 +86,52 @@ module.exports = (grunt) ->
           'dist/styleguide': 'src/less/library.less'
         }]
 
+
+    # Jade
+    jade:
+      options:
+        pretty: true
+        data:
+          timestamp: "<%= new Date().getTime() %>"
+      build:
+        options:
+          data:
+            debug: true
+            sitepath: '/css'
+
+        files:[{
+          expand: true
+          cwd: 'src/jade/'
+          src: ['**/*.jade', '!common/**', '!styleguide.jade']
+          dest: 'site/'
+          ext: '.html'
+        }]
+
+      pages:
+        options:
+          data:
+            sitepath: '/UI.Library/css'
+
+        files: '<%= jade.build.files %>'
+
+      styleguide:
+        options:
+          data:
+            sitepath: '/css'
+            stylepath: '/styleguide'
+        files:
+          'src/styleguide-template/index.html' : 'src/jade/styleguide.jade'
+
+      styleguidePages:
+        options:
+          data:
+            sitepath:   '/UI.Library/css'
+            stylepath:  '/UI.Library/styleguide'
+        files:
+          'src/styleguide-template/index.html' : 'src/jade/styleguide.jade'
+
+
+
     # HTML Validation
     validation:
       options:
@@ -101,7 +147,7 @@ module.exports = (grunt) ->
       main:
         files: [
           { expand: true, cwd: 'src/js/', src: ['**'], dest: 'site/scripts'}
-          { expand: true, cwd: 'src/', src: ['*.html'], dest: 'site/'},
+          # { expand: true, cwd: 'src/html', src: ['**'], dest: 'site/'},
           { expand: true, cwd: 'src/', src: ['images/**', 'fonts/**'], dest: 'site/'},
           # {expand: true, flatten: true, filter: 'isFile', cwd: 'src/', src: ['css/**'], dest: 'site/css'},
           # {expand: true, flatten: true, cwd: 'bower_components/', src:  jsFiles, dest: 'site/js/'}
@@ -149,6 +195,13 @@ module.exports = (grunt) ->
       #   tasks: ['cssmin']
 
       less:
+        files: ['src/jade/**/*.jade']
+        tasks: ['jade:build']
+        options:
+          spawn: false
+          interupt: true
+
+      jade:
         files: ['src/less/**/*.less']
         tasks: ['less:styleguide', 'less:skins', 'autoprefixer', 'copy:main', 'styleguide:library']
         options:
@@ -187,9 +240,9 @@ module.exports = (grunt) ->
   # Default task(s).
   grunt.registerTask 'default',     ['concurrent:less']
   grunt.registerTask 'test',        ['jshint', 'csslint']
-  grunt.registerTask 'server',      ['clean','less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
+  grunt.registerTask 'server',      ['clean', 'jade:build', 'less', 'autoprefixer', 'copy','jade:styleguide', 'styleguide:library', 'connect', 'watch']
   grunt.registerTask 'production',  ['concurrent:dist', 'styleguide']
-  grunt.registerTask 'deploy',      ['clean', 'concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'concurrent:dist', 'compress', 'gh-pages']
+  grunt.registerTask 'deploy',      ['clean', 'jade:pages', 'concurrent:less', 'autoprefixer', 'copy','copy','jade:styleguidePages', 'styleguide:library', 'concurrent:dist', 'compress', 'gh-pages']
 
 
 # Variables Used in the build process
