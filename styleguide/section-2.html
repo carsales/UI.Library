@@ -56,7 +56,22 @@
 </form></div>
             </div>
             <div class="kss-markup">
-              <pre></pre>
+              <pre><code data-language="html">&lt;form class=&quot;form-inline&quot;&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;div class=&quot;control control-thin&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+  &lt;/div&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;div class=&quot;control control-thin&quot;&gt;
+    &lt;input type=&quot;email&quot;&gt;
+  &lt;/div&gt;
+  &lt;label class=&quot;checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot;&gt;Remember Me
+  &lt;/label&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;button&gt;Go&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
             </div>
           </div>
         </section>
@@ -117,7 +132,54 @@
 </form></div>
             </div>
             <div class="kss-markup">
-              <pre></pre>
+              <pre><code data-language="html">&lt;form class=&quot;form-horizontal&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Name&lt;/label&gt;
+    &lt;div class=&quot;control col-9&quot;&gt;
+      &lt;input type=&quot;text&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Email&lt;/label&gt;
+    &lt;div class=&quot;control col-9&quot;&gt;
+      &lt;input type=&quot;email&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Postcode&lt;/label&gt;
+    &lt;div class=&quot;control col-3&quot;&gt;
+      &lt;input type=&quot;number&quot;&gt;
+    &lt;/div&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Phone&lt;/label&gt;
+    &lt;div class=&quot;control col-3&quot;&gt;
+      &lt;input type=&quot;tel&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Terms and conditions&lt;/label&gt;
+    &lt;div class=&quot;control col-9&quot;&gt;
+      &lt;label class=&quot;checkbox-inline&quot;&gt;
+        &lt;input type=&quot;checkbox&quot;&gt;I agree to terms and conditions
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;label class=&quot;col-3&quot;&gt;Ask a question?&lt;/label&gt;
+    &lt;div class=&quot;control col-9&quot;&gt;
+      &lt;label class=&quot;radio-inline&quot;&gt;
+        &lt;input type=&quot;radio&quot;&gt;Yes
+      &lt;/label&gt;
+      &lt;label class=&quot;radio-inline&quot;&gt;
+        &lt;input type=&quot;radio&quot;&gt;No
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;control col-9 col-offset-3&quot;&gt;
+      &lt;button&gt;Sign In&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
             </div>
           </div>
         </section>
@@ -151,7 +213,27 @@
 </form></div>
             </div>
             <div class="kss-markup">
-              <pre></pre>
+              <pre><code data-language="html">&lt;form class=&quot;form-vertical&quot;&gt;
+  &lt;label&gt;Username&lt;/label&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+  &lt;/div&gt;
+  &lt;label&gt;Password&lt;/label&gt;
+  &lt;div class=&quot;control&quot;&gt;
+    &lt;input type=&quot;password&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;control checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;remember&quot; name=&quot;remember&quot;&gt;
+    &lt;label for=&quot;remember&quot;&gt;Remember Me&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;control checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;remember&quot; name=&quot;remember&quot;&gt;
+    &lt;label for=&quot;remember&quot;&gt;Remember Me&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-actions&quot;&gt;
+    &lt;button&gt;Sign In&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
             </div>
           </div>
         </section>
@@ -205,7 +287,11 @@
 </form></div>
             </div>
             <div class="kss-markup">
-              <pre></pre>
+              <pre><code data-language="html">&lt;form class=&quot;form-vertical&quot;&gt;
+  &lt;div class=&quot;control {$modifiers}&quot;&gt;
+    &lt;input type=&quot;text&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
             </div>
           </div>
         </section>
@@ -224,7 +310,12 @@
 </div></div>
             </div>
             <div class="kss-markup">
-              <pre></pre>
+              <pre><code data-language="html">&lt;div class=&quot;control control-pin control-medium&quot;&gt;
+  &lt;input type=&quot;text&quot;  class=&quot;input-medium&quot; placeholder=&quot;3&quot;&gt;
+  &lt;input type=&quot;text&quot;  class=&quot;input-medium&quot; placeholder=&quot;0&quot;&gt;
+  &lt;input type=&quot;text&quot;  class=&quot;input-medium&quot; placeholder=&quot;0&quot;&gt;
+  &lt;input type=&quot;text&quot;  class=&quot;input-medium&quot; placeholder=&quot;0&quot;&gt;
+&lt;/div&gt;</code></pre>
             </div>
           </div>
         </section>
