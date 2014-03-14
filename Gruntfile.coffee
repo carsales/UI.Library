@@ -101,8 +101,8 @@ module.exports = (grunt) ->
       main:
         files: [
           { expand: true, cwd: 'src/js/', src: ['**'], dest: 'site/scripts'}
-          # {expand: true, cwd: 'src/html/', src: ['**'], dest: 'site/'},
-          # {expand: true, cwd: 'src/', src: ['images/**', 'fonts/**'], dest: 'site/'},
+          { expand: true, cwd: 'src/', src: ['*.html'], dest: 'site/'},
+          { expand: true, cwd: 'src/', src: ['images/**', 'fonts/**'], dest: 'site/'},
           # {expand: true, flatten: true, filter: 'isFile', cwd: 'src/', src: ['css/**'], dest: 'site/css'},
           # {expand: true, flatten: true, cwd: 'bower_components/', src:  jsFiles, dest: 'site/js/'}
         ]
@@ -187,9 +187,9 @@ module.exports = (grunt) ->
   # Default task(s).
   grunt.registerTask 'default',     ['concurrent:less']
   grunt.registerTask 'test',        ['jshint', 'csslint']
-  grunt.registerTask 'server',      ['less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
+  grunt.registerTask 'server',      ['clean','less', 'autoprefixer', 'copy', 'styleguide:library', 'connect', 'watch']
   grunt.registerTask 'production',  ['concurrent:dist', 'styleguide']
-  grunt.registerTask 'deploy',      ['concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'concurrent:dist', 'compress', 'gh-pages']
+  grunt.registerTask 'deploy',      ['clean', 'concurrent:less', 'autoprefixer', 'copy', 'styleguide:library', 'concurrent:dist', 'compress', 'gh-pages']
 
 
 # Variables Used in the build process
