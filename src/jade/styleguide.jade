@@ -50,7 +50,9 @@ body#kss-node
                 | {{modifierMarkup}}
             | {{/eachModifier}}
             .kss-markup
-              pre.
+              pre
+                code(data-language="html") {{markup}}
+
 
           | {{else}}
           | {{#if description}}
