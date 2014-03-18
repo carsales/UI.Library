@@ -6,7 +6,7 @@
 // <div class="pagination">
 //   <div class="page-count">Page 2 of 4</div>
 //   <div class="pages">
-//     <a href="#" class="prev page"><span class="caret west"></span>Prev</a>
+//     <span href="#" class="prev page disabled"><span class="caret west"></span>Prev</span>
 //     <a href="#" class="page">1</a>
 //     <span class="current page">2</span>
 //     <a href="#" class="page">3</a>
@@ -42,6 +42,10 @@
 
     .current {
       background: none;
+    }
+
+    .disabled {
+      opacity: 0.5;
     }
 
     .page-count {
