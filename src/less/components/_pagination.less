@@ -3,12 +3,12 @@
 // Used for longer listings of content, where a continuous scroll or similar is not appropriate.
 //
 // Markup:
-// <div class="pagination">
+// <div class="pagination {$modifiers}">
 //   <div class="page-count">Page 2 of 4</div>
 //   <div class="pages">
 //     <span href="#" class="prev page disabled"><span class="caret west"></span>Prev</span>
-//     <a href="#" class="page">1</a>
-//     <span class="current page">2</span>
+//     <a href="#" class="current page">1</a>
+//     <span class="page">2</span>
 //     <a href="#" class="page">3</a>
 //     <a href="#" class="page">4</a>
 //     <a href="#" class="next page">Next<span class="caret east"></span></a>
@@ -17,10 +17,7 @@
 //
 // Styleguide 8.0
   .pagination {
-    .clearfix();
-    border-top: solid 1px @gray-light;
-    padding: @large-spacing 0;
-    margin-top: @large-spacing;
+    &:extend(.clearfix);
 
     .pages {
       text-align: right;
@@ -32,10 +29,10 @@
       border-radius: @btn-border-radius;
       color: @gray-dark;
       display: inline-block;
-      margin-left: @base-spacing;
-      padding: 0 10px;
-      line-height: 30px;
       height: 30px;
+      line-height: 30px;
+      margin-left: @base-spacing/2;
+      padding: 0 15px;
       text-decoration: none;
       text-align: center;
     }
