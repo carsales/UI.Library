@@ -37,83 +37,58 @@
             width: 100%;
         }
 
-        .layout-body { // Wrapper of main and sidebar
-            display: table;
-            margin-top: @large-spacing;
-            width: 100%;
-        }
     }
 
-    .layout-sidebar,
-    .layout-main {
-        display: table-cell;
+    // Header of layout - To contain things like titles, tools, refinement or pagination
+    .layout-header {
+        min-height: 90px;
+        overflow: hidden;
         padding: 10px;
-        transition: all 0.25s;
-        vertical-align: top;
+        position: relative;
+      }
 
-        /*@media (max-width: @small-breakpoint) {
-            padding: @small-outer-spacing;
-        }*/
-
-        /*@media (min-width: @large-breakpoint) {
-            padding: @large-outer-spacing;
-        }*/
-
+    // Body of layout - Wraps main content and sidebar(s)
+    .layout-body {
+        display: table;
+        margin-top: @large-spacing;
+        width: 100%;
     }
 
-    .layout-main {
-        /*@media (max-width: @small-breakpoint) {
-            border-color: rgb(231,0,51);
-        }*/
-        /*@media (min-width: @large-breakpoint) {
-            border-color: rgb(0,255,0);
-        }*/
-    }
-    .layout-sidebar {
-        width: 320px;
-        max-width: 320px;
+        .layout-sidebar,
+        .layout-main {
+            display: table-cell;
+            padding: 10px;
+            transition: all 0.25s;
+            vertical-align: top;
+            /*@media (max-width: @small-breakpoint) {
+                padding: @small-outer-spacing;
+            }*/
 
-        /*@media (max-width: @small-breakpoint) {
-            border-color: rgb(231,0,51);
-        }*/
+            /*@media (min-width: @large-breakpoint) {
+                padding: @large-outer-spacing;
+            }*/
 
-        /*@media (min-width: @large-breakpoint) {
-            border-color: rgb(0,255,0);
-        }*/
-    }
-
-
-//
-// OLD LAYOUTS
-// -----------------------------------------
-
-// Variables
-// -----------------------------------------
-    @gutter-width:    @base-spacing;
-    @container-width: @screen-medium - (@gutter-width*0);
-
-
-// Base Layout Styles
-// -----------------------------------------
-    // Layout Wrapper
-    .container {
-        margin-right: auto;
-        margin-left: auto;
-        padding: 0 10px;
-        width: @container-width;
-        *zoom: 1;
-
-        /*@media (min-width: @screen-large){
-            width: 1200px;
-        }*/
-
-        &:before,
-        &:after {
-          display: table;
-          content: "";
-          line-height: 0;
         }
-        &:after {
-          clear: both;
+
+        .layout-main {
+            /*@media (max-width: @small-breakpoint) {
+                border-color: rgb(231,0,51);
+            }*/
+            /*@media (min-width: @large-breakpoint) {
+                border-color: rgb(0,255,0);
+            }*/
         }
-    }
+        .layout-sidebar {
+            width: 320px;
+            max-width: 320px;
+            /*@media (max-width: @small-breakpoint) {
+                border-color: rgb(231,0,51);
+            }*/
+
+            /*@media (min-width: @large-breakpoint) {
+                border-color: rgb(0,255,0);
+            }*/
+        }
+
+
+
