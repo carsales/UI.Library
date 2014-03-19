@@ -24,15 +24,15 @@
     width: @base-layout-width - (@base-outer-spacing * 2);
     transition: all 0.25s;
 
-    & when (@responsive) {
-      @media (min-width: @large-breakpoint)  {
-        width: @large-layout-width - (@large-outer-spacing * 2);
-      }
+    // & when (@responsive) {
+    //   @media (min-width: @large-breakpoint)  {
+    //     width: @large-layout-width - (@large-outer-spacing * 2);
+    //   }
 
-      @media (max-width: @small-breakpoint) {
-        width: @small-layout-width - (@small-outer-spacing * 2);
-      }
-    }
+    //   @media (max-width: @small-breakpoint) {
+    //     width: @small-layout-width - (@small-outer-spacing * 2);
+    //   }
+    // }
 
 
     // Layouts inside a modal window eg. Image Gallery
@@ -64,15 +64,15 @@
       transition: all 0.25s;
       vertical-align: top;
 
-      & when (@responsive) {
-        @media (max-width: @small-breakpoint) {
-          padding: @small-outer-spacing;
-        }
+      // & when (@responsive) {
+      //   @media (max-width: @small-breakpoint) {
+      //     padding: @small-outer-spacing;
+      //   }
 
-        @media (min-width: @large-breakpoint) {
-          padding: @large-outer-spacing;
-        }
-      }
+      //   @media (min-width: @large-breakpoint) {
+      //     padding: @large-outer-spacing;
+      //   }
+      // }
 
     }
 
