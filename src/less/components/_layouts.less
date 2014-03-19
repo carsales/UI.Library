@@ -5,90 +5,83 @@
 
 // Variables
 // -----------------------------------------
-    @small-outer-spacing:       10px;
-    @base-outer-spacing:        10px;
-    @large-outer-spacing:       20px;
+  @small-outer-spacing:       10px;
+  @base-outer-spacing:        10px;
+  @large-outer-spacing:       20px;
 
-    @small-layout-width:        764px; // ipad portrait
-    @base-layout-width:         980px; // ipad landscape
-    @large-layout-width:        1230px;// Large screens
+  @small-layout-width:        764px; // ipad portrait
+  @base-layout-width:         980px; // ipad landscape
+  @large-layout-width:        1230px;// Large screens
 
 
 // Base layout styles
 // -----------------------------------------
-    .layout-sidebar-left,
-    .layout-sidebar-right,
-    .layout-sidebar-both {
-        display: table;
-        margin: 0 auto;
-        width: @base-layout-width - (@base-outer-spacing * 2);
-        transition: all 0.25s;
+  .layout-sidebar-left,
+  .layout-sidebar-right,
+  .layout-sidebar-both {
+    display: table;
+    margin: 0 auto;
+    width: @base-layout-width - (@base-outer-spacing * 2);
+    transition: all 0.25s;
 
-        /*@media (min-width: @large-breakpoint) {
-            width: @large-layout-width - (@large-outer-spacing * 2);
-        }*/
-
-        /*@media (max-width: @small-breakpoint) {
-            width: @small-layout-width - (@small-outer-spacing * 2);
-        }*/
-
-        // Layouts inside a modal window eg. Image Gallery
-        .is-modal & {
-            width: 100%;
-        }
-
-    }
-
-    // Header of layout - To contain things like titles, tools, refinement or pagination
-    .layout-header {
-        min-height: 90px;
-        overflow: hidden;
-        padding: 10px;
-        position: relative;
+    & when (@responsive) {
+      @media (min-width: @large-breakpoint)  {
+        width: @large-layout-width - (@large-outer-spacing * 2);
       }
 
-    // Body of layout - Wraps main content and sidebar(s)
-    .layout-body {
-        display: table;
-        margin-top: @large-spacing;
-        width: 100%;
+      @media (max-width: @small-breakpoint) {
+        width: @small-layout-width - (@small-outer-spacing * 2);
+      }
     }
 
-        .layout-sidebar,
-        .layout-main {
-            display: table-cell;
-            padding: 10px;
-            transition: all 0.25s;
-            vertical-align: top;
-            /*@media (max-width: @small-breakpoint) {
-                padding: @small-outer-spacing;
-            }*/
 
-            /*@media (min-width: @large-breakpoint) {
-                padding: @large-outer-spacing;
-            }*/
+    // Layouts inside a modal window eg. Image Gallery
+    .is-modal & {
+      width: 100%;
+    }
 
+  }
+
+  // Header of layout - To contain things like titles, tools, refinement or pagination
+  .layout-header {
+    min-height: 90px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    }
+
+  // Body of layout - Wraps main content and sidebar(s)
+  .layout-body {
+    display: table;
+    margin-top: @large-spacing;
+    width: 100%;
+  }
+
+    .layout-sidebar,
+    .layout-main {
+      display: table-cell;
+      padding: 10px;
+      transition: all 0.25s;
+      vertical-align: top;
+
+      & when (@responsive) {
+        @media (max-width: @small-breakpoint) {
+          padding: @small-outer-spacing;
         }
 
-        .layout-main {
-            /*@media (max-width: @small-breakpoint) {
-                border-color: rgb(231,0,51);
-            }*/
-            /*@media (min-width: @large-breakpoint) {
-                border-color: rgb(0,255,0);
-            }*/
+        @media (min-width: @large-breakpoint) {
+          padding: @large-outer-spacing;
         }
-        .layout-sidebar {
-            width: 320px;
-            max-width: 320px;
-            /*@media (max-width: @small-breakpoint) {
-                border-color: rgb(231,0,51);
-            }*/
+      }
 
-            /*@media (min-width: @large-breakpoint) {
-                border-color: rgb(0,255,0);
-            }*/
-        }
+    }
+
+    .layout-main {}
+
+    .layout-sidebar {
+      width: 320px;
+      max-width: 320px;
+    }
 
 
 

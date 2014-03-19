@@ -40,94 +40,65 @@
 // <script src="/scripts/components/ui-accordion.js" type="text/javascript"></script>
 //
 // Styleguide 15.0
+  & when (@accordions) {
+    // Parent Container
+    .module-accordion {
+      margin: 0;
+      padding: 0;
 
-  // Parent Container
-  .module-accordion {
-    margin: 0;
-    padding: 0;
-
-    // Group == heading + body
-    .accordion-group {
-      border-bottom: 1px solid #e5e5e5;
-      list-style: none;
-      margin-bottom:0;
-    }
-
-      .accordion-header {
-        font-size:14px;
+      // Group == heading + body
+      .accordion-group {
+        border-bottom: 1px solid #e5e5e5;
+        list-style: none;
+        margin-bottom:0;
       }
 
-        .accordion-toggle {
-          cursor: pointer;
-          color: @link-color;
-          display: block;
-          padding: 10px;
-          position: relative;
-
-          .accordion-icon {
-            color: @base-text-color;
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            margin-top: -4px;
-            -webkit-transition: -webkit-transform .2s;
-            -moz-transition: -moz-transform .2s;
-            transition: transform .2s;
-          }
-
-          &.is-active {
-            .accordion-icon {
-              .rotate(180deg);
-            }
-          }
+        .accordion-header {
+          font-size:14px;
         }
 
+          .accordion-toggle {
+            cursor: pointer;
+            color: @link-color;
+            display: block;
+            padding: 10px;
+            position: relative;
 
-    .accordion-body {
-      overflow: hidden;
-      position: relative;
-      height: 0;
-      overflow: hidden;
-      transition: all .5s;
+            .accordion-icon {
+              color: @base-text-color;
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              margin-top: -4px;
+              -webkit-transition: -webkit-transform .2s;
+              -moz-transition: -moz-transform .2s;
+              transition: transform .2s;
+            }
 
-      &.in {
-        height: none;
-      }
-    }
-      // Inner needs the styles because you can't animate
-      // properly with any styles on the element
-      .accordion-inner {
-        padding: 9px 15px;
+            &.is-active {
+              .accordion-icon {
+                .rotate(180deg);
+              }
+            }
+          }
+
+
+      .accordion-body {
+        overflow: hidden;
+        position: relative;
+        height: 0;
+        overflow: hidden;
         transition: all .5s;
-      }
-  }
 
-// Visual Variations
-// --------------------------------------------------
-  /*.accordion-with-icon {
-    .accordion-toggle {
-      position: relative;
-
-      &:after {
-        @iconSize: 15px;
-        background: @gray-light;
-        border-radius: 50%;
-        color: #fff;
-        content: "+";
-        display:block;
-        line-height: 16px;
-        margin-top: -(@iconSize / 2);
-        position: absolute;
-        right: (@iconSize / 2);
-        .size(@iconSize, @iconSize);
-        text-align: center;
-        text-decoration: none;
-        top: 50%;
+        &.in {
+          height: none;
+        }
       }
-
-      &.is-active:after {
-        content: "-";
-        line-height: 12px;
-      }
+        // Inner needs the styles because you can't animate
+        // properly with any styles on the element
+        .accordion-inner {
+          padding: 9px 15px;
+          transition: all .5s;
+        }
     }
-  }*/
+  }

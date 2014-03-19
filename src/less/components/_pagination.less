@@ -16,46 +16,48 @@
 // </div>
 //
 // Styleguide 8.0
-  .pagination {
-    &:extend(.clearfix);
+  & when (@pagination) {
+    .pagination {
+      &:extend(.clearfix);
 
-    .pages {
-      text-align: right;
+      .pages {
+        text-align: right;
+      }
+
+      .page,
+      .page-count {
+        background: @gray-lighter;
+        border-radius: @btn-border-radius;
+        color: @gray-dark;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        margin-left: @base-spacing/2;
+        padding: 0 15px;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .current {
+        background: none;
+      }
+
+      .disabled {
+        opacity: 0.5;
+      }
+
+      .page-count {
+        float: left;
+        margin-left: 0;
+      }
+
+      a:hover {
+        background: darken(@gray-lighter, 3%);
+        color: @gray-darker;
+        text-decoration: none;
+      }
+
+      .prev .caret { margin-right: 4px; }
+      .next .caret { margin-left: 4px;  }
     }
-
-    .page,
-    .page-count {
-      background: @gray-lighter;
-      border-radius: @btn-border-radius;
-      color: @gray-dark;
-      display: inline-block;
-      height: 30px;
-      line-height: 30px;
-      margin-left: @base-spacing/2;
-      padding: 0 15px;
-      text-decoration: none;
-      text-align: center;
-    }
-
-    .current {
-      background: none;
-    }
-
-    .disabled {
-      opacity: 0.5;
-    }
-
-    .page-count {
-      float: left;
-      margin-left: 0;
-    }
-
-    a:hover {
-      background: darken(@gray-lighter, 3%);
-      color: @gray-darker;
-      text-decoration: none;
-    }
-
-    .prev .caret { margin-right: 4px; }
-    .next .caret { margin-left: 4px;  }
   }
