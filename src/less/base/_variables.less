@@ -51,7 +51,6 @@
   @default-button-border:             #ddd;
 
 
-
 // Typography
 // -------------------------
 
@@ -91,7 +90,11 @@
 // ---------------------------
   @btn-border-radius:                 2px;
   @label-line-height:                 27px;
-  @input-color:                       @gray-darker;
+  @base-input-color:                  @gray-darker;
+  @control-placeholder-color:         @gray;
+  @control-border-color:              @base-border-color;
+  @control-border-focus:              darken(@base-border-color,10%);
+  @control-border-disabled:           lighten(@base-border-color,10%);
 
 
 // Tables

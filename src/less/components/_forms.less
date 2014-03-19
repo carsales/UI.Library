@@ -21,7 +21,7 @@
   input[type="color"],
   .uneditable-input {
     border: 1px solid @gray-light;
-    color: @input-color;
+    color: @base-input-color;
     font-family: @base-font-family;
     margin: 0;
     padding: 5px 5px;
@@ -44,19 +44,19 @@
   input[type="search"]:focus,
   input[type="tel"]:focus,
   input[type="color"]:focus {
-    border-color: @gray-light;
+    border-color: @control-border-focus;
     outline: 0;
   }
 
   // Input placeholder text
-  ::-webkit-input-placeholder { color: @gray; }
-  ::-moz-placeholder          { color: @gray; }
-  :-ms-input-placeholder      { color: @gray; }
+  ::-webkit-input-placeholder { color: @control-placeholder-color; }
+  ::-moz-placeholder          { color: @control-placeholder-color; }
+  :-ms-input-placeholder      { color: @control-placeholder-color; }
 
   textarea {
     height: auto;
-    resize: vertical; // Override the chrome feature to resize text boxes
     min-height: 40px; // Bug in FF allowed user to resize the textarea to nothing, and not expand it until page refresh
+    resize: vertical; // Override the chrome feature to resize text boxes
   }
 
   input[type="radio"],
@@ -90,20 +90,14 @@
 
   }
 
-
-  fieldset {
-    background-color: @gray-lighter;
-    padding: 10px;
-  }
-
   select {
-    border: 1px solid #cccccc;
     background-color: #fff;
-    padding: 0;
+    border: 1px solid @control-border-color;
+    padding: 5px;
     min-height: 23px;
 
     &[disabled] {
-      background: #e8e8e8;
+      background: @control-border-disabled;
       color: @unimportant-text-color;
     }
   }
