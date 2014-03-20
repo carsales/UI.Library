@@ -220,3 +220,4 @@ node_modules/
 
 *.sublime-workspace
 site/
+bower_components/
