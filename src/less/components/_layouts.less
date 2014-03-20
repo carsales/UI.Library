@@ -1,87 +1,118 @@
-﻿//
-// LAYOUTS
-// Includes yet-to-be-activated media queries
-// -----------------------------------------
+﻿// Layouts
+//
+// To apply the emphasis to a piece of text in different ways
+//
+// Markup:
+// <a class="btn btn-primary" href="javascript:window.open('../layout-{$modifiers}.html','winname','directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=no,resizable=no,width=1024,height=768');">{$modifiers} Example</a>
+//
+// sidebar-right           - Sidebar Right
+// sidebar-left            - Sidebar Left
+// sidebar-both            - Sidebar Both
+//
+// Styleguide 19.0
 
-// Variables
-// -----------------------------------------
-  @small-outer-spacing:       10px;
-  @base-outer-spacing:        10px;
-  @large-outer-spacing:       20px;
+  // Variables
+  // -----------------------------------------
+    @small-outer-spacing:       10px;
+    @base-outer-spacing:        10px;
+    @large-outer-spacing:       20px;
 
-  @small-layout-width:        764px; // ipad portrait
-  @base-layout-width:         980px; // ipad landscape
-  @large-layout-width:        1230px;// Large screens
-
-
-// Base layout styles
-// -----------------------------------------
-  .layout-sidebar-left,
-  .layout-sidebar-right,
-  .layout-sidebar-both {
-    display: table;
-    margin: 0 auto;
-    width: @base-layout-width - (@base-outer-spacing * 2);
-    transition: all 0.25s;
-
-    // & when (@responsive) {
-    //   @media (min-width: @large-breakpoint)  {
-    //     width: @large-layout-width - (@large-outer-spacing * 2);
-    //   }
-
-    //   @media (max-width: @small-breakpoint) {
-    //     width: @small-layout-width - (@small-outer-spacing * 2);
-    //   }
-    // }
+    @small-layout-width:        764px; // ipad portrait
+    @base-layout-width:         980px; // ipad landscape
+    @large-layout-width:        1230px;// Large screens
 
 
-    // Layouts inside a modal window eg. Image Gallery
-    .is-modal & {
-      width: 100%;
-    }
-
-  }
-
-  // Header of layout - To contain things like titles, tools, refinement or pagination
-  .layout-header {
-    min-height: 90px;
-    overflow: hidden;
-    padding: 10px;
-    position: relative;
-    }
-
-  // Body of layout - Wraps main content and sidebar(s)
-  .layout-body {
-    display: table;
-    margin-top: @large-spacing;
-    width: 100%;
-  }
-
-    .layout-sidebar,
-    .layout-main {
-      display: table-cell;
-      padding: 10px;
+  // Base layout styles
+  // -----------------------------------------
+    .layout-sidebar-left,
+    .layout-sidebar-right,
+    .layout-sidebar-both {
+      display: table;
+      margin: 0 auto;
+      width: @base-layout-width - (@base-outer-spacing * 2);
       transition: all 0.25s;
-      vertical-align: top;
 
       // & when (@responsive) {
-      //   @media (max-width: @small-breakpoint) {
-      //     padding: @small-outer-spacing;
+      //   @media (min-width: @large-breakpoint)  {
+      //     width: @large-layout-width - (@large-outer-spacing * 2);
       //   }
 
-      //   @media (min-width: @large-breakpoint) {
-      //     padding: @large-outer-spacing;
+      //   @media (max-width: @small-breakpoint) {
+      //     width: @small-layout-width - (@small-outer-spacing * 2);
       //   }
       // }
 
+
+      // Layouts inside a modal window eg. Image Gallery
+      .is-modal & {
+        width: 100%;
+      }
+
     }
 
-    .layout-main {}
-
-    .layout-sidebar {
-      width: 320px;
-      max-width: 320px;
+    // Header of layout - To contain things like titles, tools, refinement or pagination
+    .layout-header {
+      min-height: 90px;
+      overflow: hidden;
+      padding: 10px;
+      position: relative;
     }
+
+    .layout-subheader {
+      border-bottom: solid 3px @primary-accent-color;
+      margin: 0 @base-spacing @base-spacing;
+      line-height: 52px;
+
+      li {
+        border-left: solid 1px @base-border-color;
+
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+
+    // Body of layout - Wraps main content and sidebar(s)
+    .layout-body {
+      display: table;
+      margin-top: @large-spacing;
+      width: 100%;
+    }
+
+      .layout-sidebar,
+      .layout-main {
+        display: table-cell;
+        padding: 10px;
+        transition: all 0.25s;
+        vertical-align: top;
+
+        // & when (@responsive) {
+        //   @media (max-width: @small-breakpoint) {
+        //     padding: @small-outer-spacing;
+        //   }
+
+        //   @media (min-width: @large-breakpoint) {
+        //     padding: @large-outer-spacing;
+        //   }
+        // }
+
+      }
+
+      .layout-main {
+      }
+        .layout-main-header {
+          border-bottom: solid 1px @base-border-color;
+          padding-bottom: @base-panel-spacing;
+        }
+        .layout-main-footer {
+          border-top: solid 1px @base-border-color;
+          padding-top: @base-panel-spacing;
+        }
+
+      .layout-sidebar {
+        width: 320px;
+        max-width: 320px;
+      }
 
 
 

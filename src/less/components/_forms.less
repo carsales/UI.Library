@@ -93,8 +93,8 @@
   select {
     background-color: #fff;
     border: 1px solid @control-border-color;
-    padding: 5px;
-    min-height: 23px;
+    padding: 7px;
+    min-height: @base-control-height - (7 + 7);
 
     &[disabled] {
       background: @control-border-disabled;

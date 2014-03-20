@@ -10,8 +10,6 @@ There is a bottleneck between developers and user interface designers. Developer
 ## Coding Guide
 2 space indentation
 
-Ryan is the best
-
 ## Setting up from scratch
 
 If you havn't used grunt before, install the cli globally

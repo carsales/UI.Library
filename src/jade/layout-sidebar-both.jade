@@ -1,0 +1,21 @@
+extends common/layout
+
+block append head
+   link(href='#{sitepath}/library.css', media="all", rel="stylesheet", type="text/css")
+
+
+block main-content
+
+  div.layout-sidebar-both
+    div.layout-header
+      img(src="http://placehold.it/200x90&text=Logo")
+    section.layout-subheader
+      h1 [Page Title]
+    section.layout-body
+      section.layout-sidebar [Sidebar]
+      section.layout-main
+        div.layout-main-header [Pagination]
+        | [Main Content]
+      section.layout-sidebar [Sidebar]
+    section.layout-footer
+      &copy; carsales.com Limited 1999-2014.

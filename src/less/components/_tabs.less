@@ -31,6 +31,7 @@
 // Styleguide 6.0
 
 .tabs {
+  padding:0; // For when its used on a .panel
 }
   .tabs-header {
     border-bottom: 1px solid @gray-light;
@@ -38,7 +39,7 @@
 
     .tabs-title {
       display: inline-block;
-      margin: 0 @large-spacing 0 0;
+      margin: 0 @base-spacing;
       vertical-align: top;
     }
 
@@ -92,11 +93,20 @@
       }
     }
 
+  .tab-body {
+    padding-top: @large-spacing;
+
+    .panel-contained & { // Need side spacing to get it off the containing border
+      padding: 0 @base-spacing @base-spacing;
+    }
+  }
+
 
 // FUNCTIONALITY
 // -----------------------------------------
   // Make it work
   .tab-body {
+
     > .tab-pane {
       display: none;
     }

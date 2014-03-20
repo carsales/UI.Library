@@ -198,14 +198,14 @@ module.exports = (grunt) ->
       #   files: ['site/css/*.css']
       #   tasks: ['cssmin']
 
-      less:
+      jade:
         files: ['src/jade/**/*.jade']
         tasks: ['jade:build']
         options:
           spawn: false
           interupt: true
 
-      jade:
+      less:
         files: ['src/less/**/*.less']
         tasks: ['less:styleguide', 'less:skins', 'autoprefixer', 'copy:main', 'styleguide:library']
         options:
