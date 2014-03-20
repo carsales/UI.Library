@@ -1,5 +1,4 @@
 {
-  "asi" : true,
   "laxcomma" : true,
   "expr" : true,
   "globals" : {

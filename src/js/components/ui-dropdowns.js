@@ -37,7 +37,7 @@
 
 
         if (!isActive) {
-            $parent.toggleClass('is-active');
+            $parent.toggleClass('is-active')
             $this.focus();
 
             $(document).one("touchstart", function () {
