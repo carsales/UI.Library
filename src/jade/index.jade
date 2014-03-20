@@ -6,11 +6,21 @@ block append head
 
 block main-content
 
-  .row
-    .col-8
-      include:markdown ../../README.md
+  div.layout-sidebar-right
+    div.layout-header
+      img(src="http://placehold.it/200x90&text=Logo")
+    section.layout-subheader
+      h1 Carsales Network Styleguide
 
-    .col-4
-      ul.nav
-        li.nav-header General
-        li: a(href="styleguide") Styleguide
+    section.layout-body
+      section.layout-main
+        div.layout-main-header
+          include:markdown ../../README.md
+
+      section.layout-sidebar
+        ul.nav
+          li.nav-header General
+          li: a(href="styleguide") Styleguide
+
+    section.layout-footer
+      &copy; carsales.com Limited 1999-2014.
